@@ -16,8 +16,8 @@ block scripts
   script(src="/bower_components/mapbox.js/mapbox.js")
 
   script(type='text/template' id='tripTile')
-    .trip.tile.row
-      a.col-md-6(href="/trips/{{id}}")
+    .trip.tile
+      a(href="/trips/{{id}}")
         .times
           .endTime {{ended_at_date}}<br>{{ended_at_time}}
           .duration {{duration}}
@@ -30,14 +30,12 @@ block scripts
           .tripSummaryBox
             .distance {{distance}}
             .mpg {{average_mpg}}
+            .fuelCost {{fuel_cost_usd}}
             .hardBrakes(class="{{hard_brakes_class}}") {{hard_brakes}}
             .hardAccels(class="{{hard_accels_class}}") {{hard_accels}}
             .durationOver70(class="{{speeding_class}}") {{speeding}}
           .startAddress {{start_address.cleaned}}
-      .pricing.col-md-2
-        h4 Price
-        h5 ${{Math.round(((distance * .75)*100))/100}}
-      .map.col-md-4(id="map{{id}}")
+      .map(id="map{{id}}")
       br
 
 
