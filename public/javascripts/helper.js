@@ -178,14 +178,14 @@ function drawMaps() {
 }
 
 function drawMap(trip) {
-  // Setup mapbox
+  var map = null;
   L.mapbox.accessToken = mapboxAccessToken;
 
   var styleId = 'automatic.h5kpm228';
   var mapId = 'map' + trip.id;
   //bullshit
   //bullshit
-  var map = L.mapbox.map(mapId, styleId);
+  map = L.mapbox.map(mapId, styleId);
   var start = [trip.start_location.lat, trip.start_location.lon];
   var end = [trip.end_location.lat, trip.end_location.lon];
   var lineStyle = {color: '#08b1d5', opacity: 0.9};
