@@ -20,6 +20,13 @@ const api = require('./routes/api');
 const app = express();
 
 
+// View engine setup
+app.set('views', path.join(__dirname, 'views'));
+
+app.engine('pug', engines.pug);
+app.engine('ejs', engines.ejs);
+
+
 // Use the AutomaticStrategy within Passport
 passport.use(new AutomaticStrategy({
   clientID: nconf.get('AUTOMATIC_CLIENT_ID'),
@@ -42,12 +49,7 @@ passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
 
-//app.engine('pug', engines.pug);
-//app.engine('ejs', engines.ejs);
 
-// View engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
 
 app.use(favicon(`${__dirname}/public/favicon.ico`));
 app.use(logger('dev'));
