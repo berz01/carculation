@@ -17,21 +17,16 @@ html(lang="en")
           .tagline Trip Data
 
         if loggedIn
-          nav#topmenu.navbar.navbar-default(role="navigation")
-            .navbar-header
-              button.navbar-toggle(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
-                span.sr-only Toggle navigation
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
-
-            .collapse.navbar-collapse
-              ul.nav.navbar-nav
+        #sidebar-wrapper
+ul.sidebar-nav
+  li.sidebar-brand
+    a(href='#')
+      | Start Bootstrap
                 li(class=(menu === 'Home' ? 'active' : ''))
                   a(href="/") Home
                 li(class=(menu === 'trips' ? 'active' : ''))
                   a(href="/trips") Trips
-              ul.nav.navbar-nav.navbar-right
+
 
 
     block content
