@@ -76,6 +76,10 @@ app.get('/authorize/', passport.authenticate('automatic'));
 app.get('/logout/', routes.logout);
 app.get('/redirect/', passport.authenticate('automatic', {failureRedirect: '/'}), routes.redirect);
 
+app.use('/modules', require('./server/routes/modules'));
+app.use('/fleet', require('./server/routes/admin'));
+app.use('/api', require('./server/routes/worldpay'));
+
 app.get('/api/trips/', routes.ensureAuthenticated, api.trips);
 app.get('/api/trips/:id', routes.ensureAuthenticated, api.trip);
 app.get('/api/vehicles/', routes.ensureAuthenticated, api.vehicles);
