@@ -354,8 +354,8 @@ h2.pageTitle {
   vertical-align: 9px;
 }
 .trip.tile .fuelCost::after {
-  width: 21px;
-  height: 28px;
+  width: 50px;
+  height: 50px;
   background: url(/images/moneyIcon.png) 0 3px no-repeat;
   content: ' ';
   display: inline-block;
