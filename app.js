@@ -71,6 +71,7 @@ app.get('/login', routes.login);
 app.get('/trips', routes.ensureAuthenticated, routes.trips);
 app.get('/trips/:id', routes.ensureAuthenticated, routes.trip);
 app.get('/vehicles', routes.ensureAuthenticated, routes.vehicles);
+app.get('/revenue', routes.ensureAuthenticated, routes.revenue);
 
 app.get('/authorize/', passport.authenticate('automatic'));
 app.get('/logout/', routes.logout);

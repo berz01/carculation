@@ -45,6 +45,10 @@ exports.trip = (req, res, next) => {
   res.render('trip', {trip_id: req.params.id, loggedIn: true, menu: 'trips', mapboxAccessToken: nconf.get('MAPBOX_ACCESS_TOKEN')});
 };
 
+exports.revenue = (req, res, next) => {
+  res.render('revenue',  {loggedIn: true, menu: 'trips', mapboxAccessToken: nconf.get('MAPBOX_ACCESS_TOKEN')});
+};
+
 
 exports.vehicles = (req, res, next) => {
   res.render('vehicles', {loggedIn: true, menu: 'vehicles'});
