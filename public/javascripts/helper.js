@@ -188,7 +188,7 @@ function drawMap(trip) {
   var map = L.mapbox.map(mapId, styleId);
   var start = [trip.start_location.lat, trip.start_location.lon];
   var end = [trip.end_location.lat, trip.end_location.lon];
-  var lineStyle = {color: '#08b1d5', opacity: 0.5};
+  var lineStyle = {color: '#08b1d5', opacity: 0.9};
   var iconStyle = {
     iconSize: [25, 41],
     iconAnchor: [12, 40],
@@ -221,7 +221,7 @@ function drawMap(trip) {
     .bindPopup(endPopupContent)
     .addTo(map);
 
-map.remove();
+
 }
 
 
