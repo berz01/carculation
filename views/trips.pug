@@ -34,7 +34,9 @@ block scripts
             .hardAccels(class="{{hard_accels_class}}") {{hard_accels}}
             .durationOver70(class="{{speeding_class}}") {{speeding}}
           .startAddress {{start_address.cleaned}}
-      .pricing.col-md-2 ${{Math.round(((distance * .75)*100))/100}}
+      .pricing.col-md-2
+        h4 Price
+        h5 ${{Math.round(((distance * .75)*100))/100}}
       .map.col-md-4(id="map{{id}}")
       br
 
