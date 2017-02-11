@@ -5,26 +5,17 @@ function fetchTrips(cb) {
     $.getJSON('/api/trips/')
       .done(function(results) {
         trips = results.map(formatTrip);
-        var i= 0;
-        trips.forEach(function(trip) {
-          console.log(i)
-          console.log(JSON.stringify(trip));
-          i++;
-        });
-        console.log(JSON.stringify(trips));
-        var unique = trips.filter(function(elem, index, self) {
+
+        trips = trips.filter(function(elem, index, self) {
             return index == self.indexOf(elem);
         });
-        cacheTrips(unique);
-        cb(unique);
+        cacheTrips(trips);
+        cb(trips);
         hideLoading();
       });
   } else {
     trips = getCachedTrips();
-    var unique = trips.filter(function(elem, index, self) {
-        return index == self.indexOf(elem);
-    });
-    cb(unique);
+    cb(trips);
   }
 }
 
