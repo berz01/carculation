@@ -27,20 +27,10 @@ html(lang="en")
 
             .collapse.navbar-collapse
               ul.nav.navbar-nav
-                li(class=(menu === 'summary' ? 'active' : ''))
-                  a(href="/") Summary
+                li(class=(menu === 'Home' ? 'active' : ''))
+                  a(href="/") Home
                 li(class=(menu === 'trips' ? 'active' : ''))
                   a(href="/trips") Trips
-                li(class=(menu === 'vehicles' ? 'active' : ''))
-                  a(href="/vehicles") Vehicles
-                li.dropdown
-                  a#export.dropdown-toggle(href="#" data-toggle="dropdown") <span>Export All</span> <b class="caret"></b>
-                  ul.dropdown-menu(role="menu")
-                    li
-                      a#csv(href="/download/trips.csv" target="_blank") as .csv
-                    li
-                      a#json(href="/api/trips/" target="_blank") as JSON
-
               ul.nav.navbar-nav.navbar-right
                 li
                   a#logout(href="/logout/") Log Out
