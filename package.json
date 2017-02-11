@@ -4,7 +4,8 @@
   "description": "Carculation: IoT payment for you and me",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,23 @@
   "homepage": "https://github.com/berz01/carculation#readme",
   "dependencies": {
     "bluebird": "^3.4.7",
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "async": "2.0.1",
+    "body-parser": "1.15.2",
+    "bower": "1.7.9",
+    "debug": "2.2.0",
+    "express-csv": "0.6.0",
+    "express-session": "1.14.0",
+    "gulp": "3.9.1",
+    "gulp-load-plugins": "1.2.4",
+    "moment-timezone": "0.5.5",
+    "morgan": "1.7.0",
+    "nconf": "0.8.4",
+    "passport": "0.3.2",
+    "passport-automatic": "1.2.1",
+    "pug": "2.0.0-beta4",
+    "request": "2.74.0",
+    "serve-favicon": "2.3.0",
+    "underscore": "1.8.3"
   }
 }

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .panel.signin-panel
+    .panel-body
+      .row
+        .col-md-10.col-md-offset-1
+          h2.signin-title View Your Trips
+          p TripViewer shows trips taken with <a href="http://automatic.com" target="_blank">Automatic</a>.  See summary stats, inspect individual trips and download trips as .csv.
+      .row
+        .col.md-12
+          .signin-graphics
+            .logo-badge-automatic
+            .icon-integrations-arrows
+            .logo-badge-tripviewer T
+      #alert.alert
+      .row.border-both
+        .signin-instructions 
+          .signin-text Authorize your Automatic account
+        a.signin-btn(href="/authorize/") Authorize
+      .row
+        .col-md-10.col-md-offset-1
+          .signin-learnmore 
+            | View this app on  
+            a.link-blue(href="https://github.com/automatic/tripviewer") Github

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .wrapper.content
+    #alert.alert
+    h2.pageTitle Vehicles
+    #refresh.btn.btn-default <i class="glyphicon glyphicon-refresh"></i> Refresh
+    #vehicles
+    .loading Loading...
+
+block scripts
+  script(type='text/template' id='singleVehicle')
+    .vehicle(id="{{id}}")
+      .vehicleDetails
+        .display_name {{display_name}}
+        .details {{year}} {{make}} {{model}}
+      .color(style="background-color:{{color}};")
+      .vehicleStats
+        .distance <span class="badge">{{distance_mi}}</span>Miles Driven
+        .fuel_volume_usgal <span class="badge">{{fuel_volume_usgal}}</span>Gallons of Fuel
+        .duration <span class="badge">{{duration}}</span>Minutes Driven
+        .fuel_cost_usd <span class="badge">${{fuel_cost_usd}}</span>Fuel Cost
+        .trip_count {{trip_count}}
+
+  script(src="/javascripts/vehicles.js")

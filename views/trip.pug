@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  .wrapper.content
+    #alert.alert
+    a.back.btn.btn-default(href="/trips") <span class="glyphicon glyphicon-chevron-left"></span> Back
+    #trip
+    .loading Loading...
+
+block scripts
+  script.
+    var mapboxAccessToken = '#{mapboxAccessToken}';
+
+  script(src="/bower_components/mapbox.js/mapbox.js")
+  
+  script(type='text/javascript').
+    var trip_id = "!{trip_id}";
+
+  script(type='text/template' id='singleTrip')
+    h2 {{title}}
+    .map(id="map{{id}}")
+    .trip.tile
+      .times
+        .endTime {{ended_at_time}}
+        .duration {{duration}}
+        .startTime {{started_at_time}}
+        .tripLine
+          div
+          div
+      .tripSummary
+        .endAddress {{end_address.cleaned}}
+        .tripSummaryBox
+          .distance {{distance}}
+          .hardBrakes(class="{{hard_brakes_class}}") {{hard_brakes}}
+          .mpg {{average_mpg}}
+          .hardAccels(class="{{hard_accels_class}}") {{hard_accels}}
+          .fuelCost {{fuel_cost_usd}}
+          .durationOver70(class="{{speeding_class}}") {{speeding}}
+        .startAddress {{start_address.cleaned}}
+      label.business-tag <input type="checkbox" {{business_tag}} /> Tag as business trip
+
+  script(src="/javascripts/trip.js")

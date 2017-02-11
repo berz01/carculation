@@ -1,0 +1,27 @@
+{
+  "name": "Tripviewer",
+  "description": "Automatic REST API Demo Application",
+  "keywords": [
+    "node.js",
+    "Automatic",
+    "Connected Car"
+  ],
+  "repository": "https://github.com/Automatic/tripviewer",
+  "success_url": "/",
+  "env": {
+    "AUTOMATIC_CLIENT_ID": {
+      "description": "Your Automatic Client ID. Get one from developer.automatic.com"
+    },
+    "AUTOMATIC_CLIENT_SECRET": {
+      "description": "Your Automatic Client Secret. Get one from developer.automatic.com"
+    },
+    "MAPBOX_ACCESS_TOKEN": {
+      "description": "A mapbox access token. Generate one at mapbox.com"
+    },
+    "NODE_ENV": "production",
+    "SESSION_SECRET": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    }
+  }
+}

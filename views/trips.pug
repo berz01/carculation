@@ -1,0 +1,74 @@
+extends layout
+
+block content
+  .wrapper.content
+    #alert.alert
+    .btn-group.display-type
+      a.btn.btn-default(href="#" data-type="tile") Tiles
+      a.btn.btn-default(href="#" data-type="table") Table
+    #refresh.btn.btn-default <i class="glyphicon glyphicon-refresh"></i> Refresh
+    #trips
+    .loading Loading...
+
+block scripts
+  script.
+    var mapboxAccessToken = '#{mapboxAccessToken}';
+
+  script(src="/bower_components/mapbox.js/mapbox.js")
+  
+  script(type='text/template' id='tripTile')
+    .trip.tile
+      a(href="/trips/{{id}}")
+        .times
+          .endTime {{ended_at_date}}<br>{{ended_at_time}}
+          .duration {{duration}}
+          .startTime {{started_at_date}}<br>{{started_at_time}}
+          .tripLine
+            div
+            div
+        .tripSummary
+          .endAddress {{end_address.cleaned}}
+          .tripSummaryBox
+            .distance {{distance}}
+            .mpg {{average_mpg}}
+            .fuelCost {{fuel_cost_usd}}
+            .hardBrakes(class="{{hard_brakes_class}}") {{hard_brakes}}
+            .hardAccels(class="{{hard_accels_class}}") {{hard_accels}}
+            .durationOver70(class="{{speeding_class}}") {{speeding}}
+          .startAddress {{start_address.cleaned}}
+      .map(id="map{{id}}")
+
+
+  script(type='text/template' id='tripTableHeader')
+    .table.table-header
+      .select
+        input#selectall(type="checkbox" checked="")
+      .date Date
+      .startTime Start
+      .endTime End
+      .duration Duration
+      .startAddress Start Address
+      .endAddress End Address
+      .distance Dist
+      .mpg MPG
+      .fuelCost Fuel
+      .business Bus.
+
+
+  script(type='text/template' id='tripTable')
+    a.trip.table(href="/trips/{{id}}" data-trip_id="{{id}}")
+      .select
+        input.select-trip(type="checkbox" checked="")
+      .date {{dayOfWeek}}<br>{{started_at_date}}
+      .startTime {{started_at_time}}
+      .endTime {{ended_at_time}}
+      .duration {{duration}}
+      .startAddress {{start_address.multiline}}
+      .endAddress {{end_address.multiline}}
+      .distance {{distance}} mi
+      .mpg {{average_mpg}}
+      .fuelCost ${{fuel_cost_usd}}
+      .business <input type="checkbox" class="business-tag" {{business_tag}} />
+
+
+  script(src="/javascripts/trips.js")
