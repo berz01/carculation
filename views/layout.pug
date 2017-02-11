@@ -12,10 +12,10 @@ head
 body
     .wrapper
       if loggedIn
-      div#sidebar-wrapper
+      #sidebar-wrapper
         ul.sidebar-nav
           li.sidebar-brand
-            a(href='#') | Start Bootstrap
+            a(href='#') | Carulation
           li(class=(menu === 'Home' ? 'active' : ''))
             a(href="/") Home
           li(class=(menu === 'trips' ? 'active' : ''))
