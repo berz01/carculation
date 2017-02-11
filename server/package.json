@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "Carculation: IoT payment for you and me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berz01/carculation.git"
+  },
+  "keywords": [
+    "car",
+    "calculation",
+    "carculation",
+    "iot"
+  ],
+  "author": "chris, barrett, and ereio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berz01/carculation/issues"
+  },
+  "homepage": "https://github.com/berz01/carculation#readme"
+}
