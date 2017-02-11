@@ -222,6 +222,7 @@ function drawMap(trip) {
     .addTo(map);
 
 map.off();
+map.remove();
 }
 
 
