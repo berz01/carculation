@@ -5,7 +5,7 @@ function fetchTrips(cb) {
     $.getJSON('/api/trips/')
       .done(function(results) {
         trips = results.map(formatTrip);
-        console.log("trips");
+        console.log(trips);
         var unique = trips.filter(function(elem, index, self) {
             return index == self.indexOf(elem);
         });
