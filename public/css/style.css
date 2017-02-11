@@ -339,6 +339,7 @@ h2.pageTitle {
   font-weight: normal;
 }
 .trip.tile .fuelCost {
+  padding-top:10px;
   width: 33%;
   float: left;
   font-size: 30px;
