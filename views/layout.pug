@@ -12,45 +12,39 @@ html(lang="en")
     .github-fork-ribbon-wrapper
       .github-fork-ribbon
         a(href="https://github.com/Automatic/tripviewer") Fork me on GitHub
-        
+
     .mainHeader
       .wrapper
         a.logo(href="http://automatic.com")
         .titlebar
           h1 TripViewer
           .tagline View and Export your Automatic Trips
-          
+
         if loggedIn
-          nav#topmenu.navbar.navbar-default(role="navigation")
-            .navbar-header
-              button.navbar-toggle(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
-                span.sr-only Toggle navigation
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
-                      
-            .collapse.navbar-collapse
-              ul.nav.navbar-nav
-                li(class=(menu === 'summary' ? 'active' : ''))
-                  a(href="/") Summary
-                li(class=(menu === 'trips' ? 'active' : ''))
-                  a(href="/trips") Trips
-                li(class=(menu === 'vehicles' ? 'active' : ''))
-                  a(href="/vehicles") Vehicles
-                li.dropdown
-                  a#export.dropdown-toggle(href="#" data-toggle="dropdown") <span>Export All</span> <b class="caret"></b>
-                  ul.dropdown-menu(role="menu")
-                    li
-                      a#csv(href="/download/trips.csv" target="_blank") as .csv
-                    li
-                      a#json(href="/api/trips/" target="_blank") as JSON
-                      
-              ul.nav.navbar-nav.navbar-right
-                li
-                  a#logout(href="/logout/") Log Out
+        #sidebar-wrapper
+          ul.sidebar-nav
+            li.sidebar-brand
+              a(href='#')
+                | Start Bootstrap
+  li
+    a(href='#') Dashboard
+    li(class=(menu === 'trips' ? 'active' : ''))
+      a(href="/trips") Trips
+  li
+    a(href='#') Overview
+  li
+    a(href='#') Events
+  li
+    a(href='#') About
+  li
+    a(href='#') Services
+  li
+    a(href='#') Contact
+
+
 
     block content
-        
+
     script(src="/bower_components/polyline/src/polyline.js")
     script(src="/bower_components/jquery/dist/jquery.min.js")
     script(src="/bower_components/underscore/underscore-min.js")
