@@ -10,7 +10,7 @@
     "bootstrap": "3.3.6",
     "d3": "3.5.12",
     "jquery": "2.1.4",
-    "mapbox.js": "3.0.1",
+    "mapbox.js": "2.2.3",
     "moment": "2.10.6",
     "moment-timezone": "0.4.1",
     "polyline": "0.2.0",
