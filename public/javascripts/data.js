@@ -14,7 +14,10 @@ function fetchTrips(cb) {
       });
   } else {
     trips = getCachedTrips();
-    cb(trips);
+    var unique = trips.filter(function(elem, index, self) {
+        return index == self.indexOf(elem);
+    });
+    cb(unique);
   }
 }
 
