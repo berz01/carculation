@@ -12,16 +12,33 @@ html(lang="en")
   body
 
         if loggedIn
-        #wrapper
-        #sidebar-wrapper
-          ul.sidebar-nav
-            li.sidebar-brand
-              a(href='#')
-                | Start Bootstrap
-            li
-              a(href='#') Dashboard
-            li(class=(menu === 'trips' ? 'active' : ''))
-              a(href="/trips") Trips
+        nav#topmenu.navbar.navbar-default(role="navigation")
+           .navbar-header
+             button.navbar-toggle(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+               span.sr-only Toggle navigation
+               span.icon-bar
+               span.icon-bar
+               span.icon-bar
+
+           .collapse.navbar-collapse
+             ul.nav.navbar-nav
+               li(class=(menu === 'summary' ? 'active' : ''))
+                 a(href="/") Summary
+               li(class=(menu === 'trips' ? 'active' : ''))
+                 a(href="/trips") Trips
+               li(class=(menu === 'vehicles' ? 'active' : ''))
+                 a(href="/vehicles") Vehicles
+               li.dropdown
+                 a#export.dropdown-toggle(href="#" data-toggle="dropdown") <span>Export All</span> <b class="caret"></b>
+                 ul.dropdown-menu(role="menu")
+                   li
+                     a#csv(href="/download/trips.csv" target="_blank") as .csv
+                   li
+                     a#json(href="/api/trips/" target="_blank") as JSON
+
+             ul.nav.navbar-nav.navbar-right
+               li
+                 a#logout(href="/logout/") Log Out
 
 
 
