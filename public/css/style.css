@@ -13,8 +13,8 @@ body {
 }
 .wrapper.content {
   background: #ffffff;
-  margin-right:0px;
-  margine-left:-30px;
+  margin-right:20px;
+  margin-top:20px;
   padding: 10px;
   min-height: 430px;
 }
