@@ -219,6 +219,8 @@ function drawMap(trip) {
   L.marker(end, {title: 'End Location', icon: bIcon})
     .bindPopup(endPopupContent)
     .addTo(map);
+
+    map.remove();
 }
 
 

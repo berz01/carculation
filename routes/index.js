@@ -12,7 +12,7 @@ exports.login = (req, res, next) => {
 
 
 exports.redirect = (req, res, next) => {
-  res.redirect('/');
+  res.redirect('/trips');
 };
 
 
