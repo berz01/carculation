@@ -2,12 +2,12 @@ const nconf = require('nconf');
 
 
 exports.index = (req, res, next) => {
-  res.render('index', {loggedIn: true, menu: 'summary'});
+  res.render('index.pug', {loggedIn: true, menu: 'summary'});
 };
 
 
 exports.login = (req, res, next) => {
-  res.render('login');
+  res.render('login.pug');
 };
 
 
@@ -37,12 +37,12 @@ exports.logout = (req, res, next) => {
 
 
 exports.trips = (req, res, next) => {
-  res.render('trips', {loggedIn: true, menu: 'trips', mapboxAccessToken: nconf.get('MAPBOX_ACCESS_TOKEN')});
+  res.render('trips.pug', {loggedIn: true, menu: 'trips', mapboxAccessToken: nconf.get('MAPBOX_ACCESS_TOKEN')});
 };
 
 
 exports.trip = (req, res, next) => {
-  res.render('trip', {trip_id: req.params.id, loggedIn: true, menu: 'trips', mapboxAccessToken: nconf.get('MAPBOX_ACCESS_TOKEN')});
+  res.render('trip.pug', {trip_id: req.params.id, loggedIn: true, menu: 'trips', mapboxAccessToken: nconf.get('MAPBOX_ACCESS_TOKEN')});
 };
 
 exports.revenue = (req, res, next) => {
@@ -51,7 +51,7 @@ exports.revenue = (req, res, next) => {
 
 
 exports.vehicles = (req, res, next) => {
-  res.render('vehicles', {loggedIn: true, menu: 'vehicles'});
+  res.render('vehicles.pug', {loggedIn: true, menu: 'vehicles'});
 };
 
 
