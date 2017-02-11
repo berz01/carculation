@@ -463,9 +463,8 @@ h2.pageTitle {
   background: #fe8c0a;
 }
 .trip.tile .map {
-  width: 400px;
+  width: 300px;
   height: 183px;
-  float: right;
 }
 .loading {
   text-align: center;
