@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  #page-content-wrapper
+
     .wrapper.content
       #alert.alert
       .btn-group.display-type
@@ -16,7 +16,7 @@ block scripts
   script(src="/bower_components/mapbox.js/mapbox.js")
 
   script(type='text/template' id='tripTile')
-    .trip.tile
+    .trip.tile#page-content-wrapper
       a(href="/trips/{{id}}")
         .times
           .endTime {{ended_at_date}}<br>{{ended_at_time}}
