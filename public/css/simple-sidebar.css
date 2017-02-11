@@ -17,6 +17,7 @@ body {
 }
 
 #sidebar-wrapper {
+    margin-top:-20px;
     margin-right:-20px;
     z-index: 1000;
     position: fixed;
