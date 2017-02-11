@@ -114,8 +114,12 @@ function renderTrips() {
     .addClass(viewType);
 
   if (viewType === 'tile') {
+    var counter = 0;
     trips.forEach(function(trip) {
+      if(counter %2 == 0){
       $('#trips').append($(tripTemplate(trip)).data('trip', trip));
+      }
+      counter++;
     });
     selectAll();
   } else if (viewType === 'table') {
