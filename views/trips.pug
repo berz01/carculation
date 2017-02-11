@@ -35,6 +35,7 @@ block scripts
             .hardAccels(class="{{hard_accels_class}}") {{hard_accels}}
             .durationOver70(class="{{speeding_class}}") {{speeding}}
           .startAddress {{start_address.cleaned}}
+      .pricing ${{distance * .75}}
       .map(id="map{{id}}")
       br
 
