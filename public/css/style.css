@@ -253,7 +253,7 @@ h2.pageTitle {
 .trip.tile {
   overflow: hidden;
   background: #F4F4F4;
-  margin: 25px 0;
+  float:right;
 }
 .trip.tile .times {
   width: 100px;
