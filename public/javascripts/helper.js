@@ -176,7 +176,7 @@ function drawMaps() {
     }
   });
 }
-var map;
+
 function drawMap(trip) {
   // Setup mapbox
   L.mapbox.accessToken = mapboxAccessToken;
@@ -185,7 +185,7 @@ function drawMap(trip) {
   var mapId = 'map' + trip.id;
   //bullshit
   //bullshit
-  map = L.mapbox.map(mapId, styleId);
+  var map = L.mapbox.map(mapId, styleId);
   var start = [trip.start_location.lat, trip.start_location.lon];
   var end = [trip.end_location.lat, trip.end_location.lon];
   var lineStyle = {color: '#08b1d5', opacity: 0.5};
