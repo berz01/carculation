@@ -5,8 +5,12 @@ function fetchTrips(cb) {
     $.getJSON('/api/trips/')
       .done(function(results) {
         trips = results.map(formatTrip);
-        cacheTrips(trips);
-        cb(trips);
+        var uniqueTrips = [];
+        $.each(trips, function(i, el){
+    if($.inArray(el, uniqueTrips) === -1) uniqueNames.push(el);
+    });
+        cacheTrips(uniqueTrips);
+        cb(uniqueTrips);
         hideLoading();
       });
   } else {
