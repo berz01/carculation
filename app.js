@@ -7,6 +7,7 @@ const nconf = require('nconf');
 const session = require('express-session');
 const passport = require('passport');
 const AutomaticStrategy = require('passport-automatic').Strategy;
+const engines = require('consolidate');
 
 nconf.env().argv();
 nconf.file('./config.json');
@@ -41,10 +42,12 @@ passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
 
+app.engine('pug', engines.pug);
+app.engine('ejs', engines.ejs);
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// app.set('view engine', 'pug');
 
 app.use(favicon(`${__dirname}/public/favicon.ico`));
 app.use(logger('dev'));
