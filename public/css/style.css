@@ -259,7 +259,7 @@ h2.pageTitle {
 .trip.tile .times {
   width: 100px;
   float: left;
-  font-size: 12px;
+  font-size: 10px;
   padding: 10px 15px 10px 10px;
   position: relative;
   text-align: right;
@@ -302,7 +302,7 @@ h2.pageTitle {
 }
 .trip.tile .startAddress,
 .trip.tile .endAddress {
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 10px;
 }
 .trip.tile .tripSummaryBox {
@@ -322,13 +322,13 @@ h2.pageTitle {
 }
 .trip.tile .distance::after {
   content: ' MILES';
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
 }
 .trip.tile .mpg {
   width: 33%;
   float: left;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 14px;
   text-align: center;
@@ -341,7 +341,7 @@ h2.pageTitle {
 .trip.tile .fuelCost {
   width: 33%;
   float: left;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   text-align: right;
   white-space: nowrap;
@@ -355,7 +355,7 @@ h2.pageTitle {
 }
 .trip.tile .fuelCost::after {
   width: 21px;
-  height: 28px;
+  height: 22px;
   background: url(/images/fuel.png) 0 3px no-repeat;
   content: ' ';
   display: inline-block;
