@@ -356,7 +356,7 @@ h2.pageTitle {
 .trip.tile .fuelCost::after {
   width: 21px;
   height: 28px;
-  background: url(/images/fuel.png) 0 3px no-repeat;
+  background: url(/images/moneyIcon.png) 0 3px no-repeat;
   content: ' ';
   display: inline-block;
 }
