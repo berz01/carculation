@@ -221,7 +221,7 @@ function drawMap(trip) {
     .bindPopup(endPopupContent)
     .addTo(map);
 
-
+map.off();
 }
 
 
