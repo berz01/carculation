@@ -6,7 +6,7 @@ body {
   display:none;
 }
 .wrapper {
-  width: 940px;
+  width: 1040px;
   padding: 0 20px;
   margin: 0 auto;
   position: relative;
@@ -339,6 +339,7 @@ h2.pageTitle {
   font-weight: normal;
 }
 .trip.tile .fuelCost {
+  padding-top:10px;
   width: 33%;
   float: left;
   font-size: 30px;
@@ -354,8 +355,8 @@ h2.pageTitle {
   vertical-align: 9px;
 }
 .trip.tile .fuelCost::after {
-  width: 21px;
-  height: 28px;
+  width: 50px;
+  height: 50px;
   background: url(/images/moneyIcon.png) 0 3px no-repeat;
   content: ' ';
   display: inline-block;
