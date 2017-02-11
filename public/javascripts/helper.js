@@ -183,6 +183,8 @@ function drawMap(trip) {
 
   var styleId = 'automatic.h5kpm228';
   var mapId = 'map' + trip.id;
+  //bullshit
+  //bullshit
   map = L.mapbox.map(mapId, styleId);
   var start = [trip.start_location.lat, trip.start_location.lon];
   var end = [trip.end_location.lat, trip.end_location.lon];
