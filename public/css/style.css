@@ -6,7 +6,7 @@ body {
   display:none;
 }
 .wrapper {
-  width: 1040px;
+  width: 940px;
   padding: 0 20px;
   margin: 0 auto;
   position: relative;
@@ -90,7 +90,7 @@ h2.pageTitle {
 .signin-panel {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
   display: block;
-  margin: 70px auto 0;
+  margin: 0 auto 0;
   max-width: 600px;
 }
 .signin-panel .border-top {
@@ -339,7 +339,6 @@ h2.pageTitle {
   font-weight: normal;
 }
 .trip.tile .fuelCost {
-  padding-top:10px;
   width: 33%;
   float: left;
   font-size: 30px;
@@ -355,9 +354,9 @@ h2.pageTitle {
   vertical-align: 9px;
 }
 .trip.tile .fuelCost::after {
-  width: 50px;
-  height: 50px;
-  background: url(/images/moneyIcon.png) 0 3px no-repeat;
+  width: 21px;
+  height: 28px;
+  background: url(/images/fuel.png) 0 3px no-repeat;
   content: ' ';
   display: inline-block;
 }
@@ -712,7 +711,7 @@ text.key {
   }
   .signin-panel {
     margin-bottom: 100px;
-    margin-top: 100px;
+    margin-top: 0;
   }
   .signin-panel .border-top {
     padding: 10px 40px;
