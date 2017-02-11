@@ -46,7 +46,7 @@ exports.trip = (req, res, next) => {
 };
 
 exports.revenue = (req, res, next) => {
-  res.render('revenue.ejs' );
+  res.render('revenue.ejs');
 };
 
 

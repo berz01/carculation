@@ -24,7 +24,7 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 
 app.engine('pug', engines.pug);
-app.engine('ejs', engines.ejs);
+app.engine('ejs', require('ejs').renderFile);
 
 
 // Use the AutomaticStrategy within Passport
