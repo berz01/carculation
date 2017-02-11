@@ -13,8 +13,7 @@ body {
 }
 .wrapper.content {
   background: #ffffff;
-  margin-right:40px;
-  margin-top:20px;
+  margin-right:60px;
   padding: 10px;
   min-height: 430px;
 }
@@ -255,7 +254,7 @@ h2.pageTitle {
 .trip.tile {
   overflow: hidden;
   background: #F4F4F4;
-  float:right;
+  margin: 5px;
 }
 .trip.tile .times {
   width: 100px;
