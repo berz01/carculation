@@ -9,6 +9,7 @@ app.get('/', function (req, res) {
 
 app.use('/modules', require('./server/routes/modules'));
 app.use('/fleet', require('./server/routes/admin'));
+app.use('/api', require('./server/routes/worldpay'));
 
 app.listen(port, function () {
   console.log('Example app listening on port 8080!')
