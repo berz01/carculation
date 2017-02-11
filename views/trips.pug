@@ -17,27 +17,26 @@ block scripts
 
   script(type='text/template' id='tripTile')
     .trip.tile.row
-      .col-md-12
-        a(href="/trips/{{id}}")
-          .times
-            .endTime {{ended_at_date}}<br>{{ended_at_time}}
-            .duration {{duration}}
-            .startTime {{started_at_date}}<br>{{started_at_time}}
-            .tripLine
-              div
-              div
-          .tripSummary
-            .endAddress {{end_address.cleaned}}
-            .tripSummaryBox
-              .distance {{distance}}
-              .mpg {{average_mpg}}
-              .fuelCost {{fuel_cost_usd}}
-              .hardBrakes(class="{{hard_brakes_class}}") {{hard_brakes}}
-              .hardAccels(class="{{hard_accels_class}}") {{hard_accels}}
-              .durationOver70(class="{{speeding_class}}") {{speeding}}
-            .startAddress {{start_address.cleaned}}
-        .map(id="map{{id}}")
-        br
+      a(href="/trips/{{id}}")
+        .times
+          .endTime {{ended_at_date}}<br>{{ended_at_time}}
+          .duration {{duration}}
+          .startTime {{started_at_date}}<br>{{started_at_time}}
+          .tripLine
+            div
+            div
+        .tripSummary
+          .endAddress {{end_address.cleaned}}
+          .tripSummaryBox
+            .distance {{distance}}
+            .mpg {{average_mpg}}
+            .fuelCost {{Math.round(distance * .75 * 100)/100}}
+            .hardBrakes(class="{{hard_brakes_class}}") {{hard_brakes}}
+            .hardAccels(class="{{hard_accels_class}}") {{hard_accels}}
+            .durationOver70(class="{{speeding_class}}") {{speeding}}
+          .startAddress {{start_address.cleaned}}
+      .map(id="map{{id}}")
+      br
 
 
   script(type='text/template' id='tripTableHeader')
