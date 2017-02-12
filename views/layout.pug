@@ -30,8 +30,12 @@ body
               |  Revenue
           li(class=(menu === 'Audit' ? 'active' : ''))
             a(href="/audit")
-              i.fa.fa-file-text(aria-hidden='true')
+              i.fa.fa-file-search(aria-hidden='true')
               |  Audit
+          li(class=(menu === 'Summary' ? 'active' : ''))
+            a(href="/summary")
+              i.fa.fa-file-text(aria-hidden='true')
+              |  Summary
 
 block content
 
