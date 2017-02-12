@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var rp = require('request-promise');
 var Chance = require('chance');
 var chance = new Chance();
-var autoApi = require('./api'); 
+var autoApi = require('./api');
 
 var api = express.Router();
 
@@ -121,7 +121,7 @@ exports.script = function(req, res, next) {
             console.log(localTotal);
         }
 
-        res.json(trips);
+        res.json(localTotal);
     });
 };
 
