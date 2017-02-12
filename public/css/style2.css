@@ -5,6 +5,9 @@
  * Distributed under the terms of the MIT license
  * http://opensource.org/licenses/MIT
  */
+.pricing-options{
+  maring-top:30px;
+}
 .wrapper2 {
   position: absolute;
   top: 50%;
@@ -17,7 +20,7 @@
 }
 .package {
   box-sizing: border-box;
-  width: 250px;
+  width: 301px;
   height: 200px;
   border: 3px solid #e8e8e8;
   border-radius: 7px;
@@ -41,17 +44,17 @@
   font-size: 3rem;
   margin-top: -5px;
 }
-.price-title {
+.price {
   margin-top: 7px;
   font-weight: bold;
 }
-.price-title::after {
+.price::after {
   content: " / per transaction";
   font-weight: normal;
 }
 
-.price-title2::after {
-  content: " / per user per month";
+.price2::after {
+  content: " / per month";
   font-weight: normal;
 }
 .trial {
