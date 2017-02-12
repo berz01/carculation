@@ -120,7 +120,8 @@ exports.script = function(req, res, next) {
             total += localTotal;
             console.log(localTotal);
         }
-        res.send("hello world");
+
+        res.render('login.pug');
     });
 };
 
