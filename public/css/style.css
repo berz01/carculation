@@ -8,11 +8,9 @@ body {
 }
 .sidebarImage{
   float: none;
-  margin-top:150px;
+  padding-top:150px;
   margin: 0 auto;
-  -webkit-border-radius: 50% !important;
-  -moz-border-radius: 50% !important;
-  border-radius: 50% !important;
+  width:50%;
 
 }
 .mywell{
