@@ -98,9 +98,10 @@ exports.script = function(req, res, next) {
             Authorization: 'Bearer ' + req.user.accessToken
         },
         json: true
-    }).then(function(trips) {
+    }).then(function(body) {
         var total = 0;
-        var trips = trips.results;
+        var trips = body.results;
+        console.log(trips);
         
         for (var i = 0; i < trips.length; i++) {
             console.log("Distance RETURNED:" + trips[i].distance_m);
