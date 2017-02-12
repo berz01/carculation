@@ -18,7 +18,7 @@
 .package {
   box-sizing: border-box;
   width: 301px;
-  height: 380px;
+  height: 200px;
   border: 3px solid #e8e8e8;
   border-radius: 7px;
   display: inline-block;
@@ -46,9 +46,15 @@
   font-weight: bold;
 }
 .price::after {
-  content: " / month per user";
+  content: " / per transaction";
   font-weight: normal;
 }
+
+.price2::after {
+  content: " / per month";
+  font-weight: normal;
+}
+
 hr {
   background-color: #dedede;
   border: none;
