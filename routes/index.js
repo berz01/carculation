@@ -32,7 +32,18 @@ exports.login = (req, res, next) => {
 };
 
 exports.audit = (req, res, next) => {
-    res.render('audit.ejs');
+  request({
+      url: "https://gwapi.demo.securenet.com/api/transactions/Search",
+      method: "POST",
+      headers: {
+          Authorization: auth,
+          SecurenetID: '8008942'
+      },
+      json: true,
+      body: myJSONObject
+  }, function(error, response, body) { 
+    res.render('audit.ejs', {transactions: response.body.transactions});
+  }
 };
 
 exports.redirect = (req, res, next) => {
@@ -88,17 +99,16 @@ exports.script = function(req, res, next) {
         },
         json: true
     }).then(function(trips) {
-        var total = 0; 
+        var total = 0;
 
         for (var i = 0; i < trips.length; i++) {
+            console.log("Distance RETURNED:" + trips[i].distance_m);
             var localTotal = (helper.mToMi(trips[i].distance_m) * 0.75).toFixed(2);
             total += localTotal;
             console.log(localTotal);
         }
 
-        console.log(total);
-
-        res.json(trips);
+        res.json(total);
     });
 };
 
