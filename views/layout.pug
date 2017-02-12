@@ -17,11 +17,11 @@ body
           li.sidebar-brand
             a(href='#') | Carulation
           li(class=(menu === 'Home' ? 'active' : ''))
-            a(href="/") Home
+            a(href="/")<i class="fa fa-car" aria-hidden="true"></i> Home
           li(class=(menu === 'trips' ? 'active' : ''))
-            a(href="/trips") Trips
+            a(href="/trips")<i class="fa fa-home" aria-hidden="true"></i> Trips
           li(class=(menu === 'Revenue' ? 'active' : ''))
-            a(href="/revenue") Revenue
+            a(href="/revenue")<i class="fa fa-money" aria-hidden="true"></i> Revenue
 
 block content
 
@@ -32,6 +32,7 @@ script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
 script(src="/bower_components/moment/min/moment.min.js")
 script(src="/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.min.js")
 script(src="/bower_components/d3/d3.min.js")
+script(src='https://use.fontawesome.com/401b9ad841.js')
 
 script(src="/javascripts/helper.js")
 script(src="/javascripts/data.js")
