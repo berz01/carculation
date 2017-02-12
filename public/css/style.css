@@ -8,10 +8,8 @@ body {
   text-align: center;
 }
 .sidebarImage{
-  position:absolute;
   bottom:0;
   right:0;
-  width:50%;
 }
 .mywell{
   background: #fff !important;
