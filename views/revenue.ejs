@@ -357,6 +357,7 @@
                                         <tbody>
                                                 <% var bs = transactions %>
                                                 <% for(var i=0; i < bs.length; i++) { %>
+                                                    <% var tDate = new Date(transactions[i].transactionData.date) %>
                                                     <% if(i % 2){ %>
                                                         <tr class="even pointer">
                                                         <% } else { %>
@@ -369,7 +370,7 @@
                                                                         <td class=" "> Barrett Davis </td>
                                                                         <td class="a-right a-right "><%= transactions[i].transactionData.amount %></td>
                                                                         <td class=" ">109238091273917823</td>
-                                                                        <td class=" "><%= transactions[i].transactionData.date %></td>
+                                                                        <td class=" "><%= tDate.toGMTString() %></td>
                                                                         <td class=" "><%= transactions[i].paymentTypeResult %></td>
                                                                         <td class=" last"><a href="#">View</a><a href="#">Audit(Pro)</a>
                                                                         </td>
