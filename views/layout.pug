@@ -28,6 +28,10 @@ body
             a(href="/revenue")
               i.fa.fa-money(aria-hidden='true')
               |  Revenue
+          li(class=(menu === 'Audit' ? 'active' : ''))
+            a(href="/audit")
+              i.fa.fa-file-text(aria-hidden='true')
+              |  Audit
 
 block content
 
