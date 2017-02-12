@@ -244,6 +244,32 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <%
+                                        var drivers = new Array(3);
+
+                                        for(var i=0; i < transactions.length; i++) {
+                                          var cost = transactions[i].transactionData.amount;
+
+                                          if(cost > drivers[0].transactionData.amount) {
+                                            drivers[0] = transactions[i];
+                                          } else if(cost > drivers[2].transactionData.amount) {
+                                            drivers[1] = transactions[i];
+                                          } else if(const > drivers[3].transactionData.amount) {
+                                            drivers[2] = transactions[i];
+                                          }
+
+                                        }
+                                        %>
+                                        <% for(var i=0; i < 3; i++){ %>
+
+                                        <tr>
+                                            <th scope="row"><%= i %></th>
+                                            <td>Barrett Davis</td>
+                                            <td><%= drivers[i].paymentTypeResult %></td>
+                                            <td><%= drivers[i].transactionData.amount %></td>
+                                        </tr>
+
+                                        <% } %>
                                     </tbody>
                                 </table>
 
