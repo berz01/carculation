@@ -115,7 +115,7 @@ function renderSnippet() {
     .addClass('active')
     .siblings().removeClass('active');
 
-  $('#trips')
+  $('#snip')
     .empty()
     .removeClass()
     .addClass(viewType);
