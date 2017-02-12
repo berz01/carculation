@@ -115,7 +115,7 @@ console.log(viewType);
     .addClass('active')
     .siblings().removeClass('active');
 
-  $('#trips')
+  $('#snip')
     .empty()
     .removeClass()
     .addClass(viewType);
