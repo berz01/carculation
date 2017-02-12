@@ -106,12 +106,12 @@
                                                 <th>
                                                     <input type="checkbox" id="check-all" class="flat">
                                                 </th>
-                                                <th class="column-title">TransactionId</th>
-                                                <th class="column-title">OrderId</th>
+                                                <th class="column-title">Transaction ID</th>
+                                                <th class="column-title">Order ID</th>
                                                 <th class="column-title">Date </th>
                                                 <th class="column-title">Credit Type </th>
                                                 <th class="column-title">Card Number </th>
-                                                <th class="column-title">Authorized Amount</th>
+                                                <th class="column-title">Customer ID</th>
                                                 <th class="column-title no-link last"><span class="nobr">View Details</span>
                                                 </th>
                                                 <th class="bulk-actions" colspan="7">
@@ -137,7 +137,7 @@
                                                                         <td class=" "><%= tDate.toGMTString() %></td>
                                                                         <td class="a-right a-right "><%= transactions[i].creditCardType %></td>
                                                                         <td class=" "><%= transactions[i].cardNumber %></td>
-                                                                        <td class=" "><%= transactions[i].authorizedAmount %></td>
+                                                                        <td class=" "><%= transactions[i].customerId %></td>
                                                                         <td class=" last"><a href="#">View</a><a href="#">Full Details</a>
                                                                         </td>
                                                                 </tr>
