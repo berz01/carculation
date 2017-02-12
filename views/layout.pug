@@ -17,11 +17,14 @@ body
           li.sidebar-brand
             a(href='#') | Carulation
           li(class=(menu === 'Home' ? 'active' : ''))
-            a(href="/")i.fa.fa-car(aria-hidden='true') Home
+            a(href="/")
+              i.fa.fa-car(aria-hidden='true') Home
           li(class=(menu === 'trips' ? 'active' : ''))
-            a(href="/trips")i.fa.fa-home(aria-hidden='true') Trips
+            a(href="/trips")
+              i.fa.fa-home(aria-hidden='true') Trips
           li(class=(menu === 'Revenue' ? 'active' : ''))
-            a(href="/revenue")i.fa.fa-money(aria-hidden='true') Revenue
+            a(href="/revenue")
+              i.fa.fa-money(aria-hidden='true') Revenue
 
 block content
 
