@@ -3,7 +3,9 @@ body {
   background: #F7F7F7 !important;
   color:#73879C;
 }
-
+.hackTitle{
+  font-size:50px;
+}
 .mywell{
   background: #fff !important;
 }
