@@ -5,14 +5,12 @@ body {
 }
 .hackTitle{
   font-size:50px;
+  text-align: center;
 }
 .sidebarImage{
   float: none;
   padding-top:150px;
-  padding-left:50%;
   margin: 0 auto;
-  width:50%;
-
 }
 .mywell{
   background: #fff !important;
