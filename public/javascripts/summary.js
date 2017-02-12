@@ -17,7 +17,7 @@ $('.display-type a').click(function() {
   return false;
 });
 
-
+fetchTrips(processTrips);
 
 
 $('.graph-buttons button').click(function() {
@@ -45,7 +45,23 @@ function getEmpty() {
 }
 
 
+function processTrips(trips) {
+  var summaryListTemplate = _.template($('#summaryList').html());
 
+  weekly = d3.nest()
+    .key(function(d) { return moment(d.started_at).format('YYYY w'); })
+    .rollup(summarizeData)
+    .entries(trips);
+
+  weekly = weekly.reverse();
+
+  var totals = d3.nest()
+    .rollup(summarizeData)
+    .entries(trips);
+
+  $('#overall .panel-body').html(summaryListTemplate(totals));
+  drawGraph(prepData('distance'));
+}
 
 
 function prepData(type) {
