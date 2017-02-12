@@ -76,6 +76,10 @@ exports.revenue = (req, res, next) => {
 
 };
 
+exports.home = (req, res, next) => {
+  res.render('home.ejs');
+};
+
 
 exports.vehicles = (req, res, next) => {
   res.render('vehicles.pug', {loggedIn: true, menu: 'vehicles'});
