@@ -103,12 +103,11 @@
 
 </body>
 <script>
- $( function() {
-$(".links a").click(function() {
-  $(".panels").hide();
-  $(this.hash).fadeIn();
+
+$( document ).ready(function() {
+    console.log( "ready!" );
 });
-} );
+
 </script>
 <script src="/bower_components/polyline/src/polyline.js"></script>
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
