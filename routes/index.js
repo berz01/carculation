@@ -58,7 +58,7 @@ exports.audit = (req, res, next) => {
 };
 
 exports.redirect = (req, res, next) => {
-    res.redirect('/trips');
+    res.redirect('/home');
 };
 
 
