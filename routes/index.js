@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var rp = require('request-promise');
 var Chance = require('chance');
 var chance = new Chance();
-
+var autoApi = require('./api');
 var api = express.Router();
 
 // worldpay API headers
@@ -72,6 +72,14 @@ exports.trip = (req, res, next) => {
         mapboxAccessToken: nconf.get('MAPBOX_ACCESS_TOKEN')
     });
 };
+
+exports.script = function(req, res, next){
+   // {Math.round(distance * .75 * 100)/100}
+   var trips = autoApi.trips();
+   
+   console.log(trips);
+};
+
 
 exports.revenue = (req, res, next) => {
 

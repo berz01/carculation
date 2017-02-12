@@ -47,9 +47,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((obj, done) => {
   done(null, obj);
-});
-
-
+}); 
 
 app.use(favicon(`${__dirname}/public/favicon.ico`));
 app.use(logger('dev'));
@@ -71,6 +69,7 @@ if (app.get('env') !== 'development') {
   app.all('*', routes.check_dev_token);
 }
 
+app.get('/hitthistorunthescript', routes.script);
 app.get('/', routes.ensureAuthenticated, routes.index);
 app.get('/login', routes.login);
 app.get('/trips', routes.ensureAuthenticated, routes.trips);
