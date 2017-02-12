@@ -1,6 +1,7 @@
 body {
   font-family: 'avenir next', avenir, helvetica, arial, sans-serif;
-  background: #DED4CD !important;
+  background: #F7F7F7 !important;
+  color:#73879C;
 }
 .hidden-btn{
   display:none;
