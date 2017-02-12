@@ -157,10 +157,15 @@
                             </div>
                             <div class="x_content">
                                 <div class="tile-stats">
-                                  <div class="icon"><i class="fa fa-check-square-o"></i></div>
-                                  <div class="count">179</div>
-                                  <h3>New Sign ups</h3>
-                                  <p>Lorem ipsum psdea itgum rixt.</p>
+                                  <div class="icon"><i class="fa fa-usd"></i></div>
+                                  <%
+                                    var revenueTotal = 0;
+                                    for(var i=0; i < transactions.length; i++) {
+                                      total += transactions[i].transactionData.amount;
+                                    }
+                                  %>
+                                  <div class="count"><%= revenueTotal %></div>
+                                  <h3>Gross Total</h3>
                                 </div>
                             </div>
                         </div>
