@@ -41,9 +41,9 @@ exports.audit = (req, res, next) => {
       },
       json: true,
       body: myJSONObject
-  }, function(error, response, body) { 
+  }, function(error, response, body) {
     res.render('audit.ejs', {transactions: response.body.transactions});
-  }
+  });
 };
 
 exports.redirect = (req, res, next) => {
