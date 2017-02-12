@@ -198,6 +198,10 @@ exports.home = (req, res, next) => {
     res.render('home.ejs');
 };
 
+exports.summary = (req, res, next) => {
+    res.render('summary.ejs');
+};
+
 
 exports.vehicles = (req, res, next) => {
     res.render('vehicles.pug', {
