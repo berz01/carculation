@@ -26,7 +26,7 @@ body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #26B99A;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -62,17 +62,18 @@ body {
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+    font-size: 20px;
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #fff;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #000;
     background: rgba(255,255,255,0.2);
 }
 
@@ -83,13 +84,13 @@ body {
 
 .sidebar-nav > .sidebar-brand {
     height: 65px;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 60px;
     margin-top:20px;
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: #000;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
