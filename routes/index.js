@@ -1,5 +1,17 @@
 const nconf = require('nconf');
+var express = require('express');
+var request = require('request');
 var worldpayApi = require('../server/routes/worldpay.js');
+var rp = require('request-promise');
+
+var api = express.Router();
+
+// worldpay API headers
+username = "8008942";
+password = "cRC70MgtHKW7";
+auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
+
+
 
 exports.index = (req, res, next) => {
   res.render('index.pug', {loggedIn: true, menu: 'summary'});
