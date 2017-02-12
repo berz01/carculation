@@ -7,6 +7,9 @@ body {
   font-size:50px;
   text-align: center;
 }
+.bigFontWell{
+  font-size:18px;
+}
 .sidebarImage{
 margin-bottom:0px;
 margin-left:60px;
