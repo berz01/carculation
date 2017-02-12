@@ -14,6 +14,8 @@ width:50px;
 }
 .mywell{
   background: #fff !important;
+  overflow:scroll;
+  height:400px;"
 }
 .hidden-btn{
   display:none;
