@@ -77,19 +77,26 @@ exports.trip = (req, res, next) => {
 
 exports.script = function(req, res, next){
    // {Math.round(distance * .75 * 100)/100}
-   var trips = autoApi.trips();
 
-   var total = 0;
+   rp.get({
+       uri: "https://api.automatic.com/trip/",
+       headers: {
+           Authorization: 'Bearer ' + req.session.token.token.access_token
+       },
+       json: true
+   }).then(function(trips){  
+     var total = 0;
 
-   trips.forEach(function(trip){
-      var localTotal = (helper.mToMi(trip.distance_m) * 0.75).toFixed(2);
-      total += localTotal;
-      console.log(localTotal);
-   })
+     trips.forEach(function(trip){
+        var localTotal = (helper.mToMi(trip.distance_m) * 0.75).toFixed(2);
+        total += localTotal;
+        console.log(localTotal);
+     })
 
-   console.log(total);
+     console.log(total);
 
-   res.json(trips); 
+     res.json(trips);
+   });
 };
 
 
