@@ -38,6 +38,7 @@
     "express-session": "1.14.0",
     "gulp": "3.9.1",
     "gulp-load-plugins": "1.2.4",
+    "lodash": "^4.17.4",
     "moment-timezone": "0.5.5",
     "morgan": "1.7.0",
     "nconf": "0.8.4",

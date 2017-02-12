@@ -7,6 +7,8 @@ var rp = require('request-promise');
 var Chance = require('chance');
 var chance = new Chance();
 var autoApi = require('./api');
+var helper = require('../public/javascripts/helper');
+
 var api = express.Router();
 
 // worldpay API headers
@@ -76,8 +78,17 @@ exports.trip = (req, res, next) => {
 exports.script = function(req, res, next){
    // {Math.round(distance * .75 * 100)/100}
    var trips = autoApi.trips();
-   
-   console.log(trips);
+
+   var total = 0;
+
+   trips.forEach(function(trip){
+      var localTotal = (helper.mToMi(trip.distance_m) * 0.75).toFixed(2);
+      total += localTotal;
+      console.log(localTotal);
+   })
+
+   console.log(total);
+
 };
 
 
