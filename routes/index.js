@@ -83,7 +83,7 @@ exports.revenue = (req, res, next) => {
       body: myJSONObject
   }, function(error, response, body) {
       //console.log(response.body);
-      console.log(response.body.transactions);
+      console.log(response.body.transactions[0].transactionId);
       res.render('revenue.ejs', {transactions : response.body.transactions});
   });
 
