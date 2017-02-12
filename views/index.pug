@@ -8,33 +8,46 @@ block content
       h2.pageTitle Summary
       #refresh.btn.btn-default <i class="glyphicon glyphicon-refresh"></i> Refresh
       .row
-        .col-sm-4(style="clear: both;")
-          #overall.panel.panel-default
-            .panel-heading Total Automatic Stats
-            .panel-body
-        .col-sm-8
+        .col-sm-12
           #graphs.panel.panel-default
             .panel-heading Weekly Driving
             .panel-body
-              .btn-group.graph-buttons
-                button.btn.btn-default.active(type="button" data-graph-type="distance") Distance
-                button.btn.btn-default(type="button" data-graph-type="duration_s") Duration
-                button.btn.btn-default(type="button" data-graph-type="trip_count") Trips
-                button.btn.btn-default(type="button" data-graph-type="fuel_cost_usd") Fuel Cost
-                button.btn.btn-default(type="button" data-graph-type="fuel_volume_usgal") Fuel Volume
+              .btn-group.display-type
+                button.btn.btn-default.active(type="button" data-type="snip_one") Snippet One
+                button.btn.btn-default(type="button" data-type="snip_two") Snippet Two
+                button.btn.btn-default(type="button" data-type="snip_three") Snippet Three
+                button.btn.btn-default(type="button" data-type="snip_four") Snippet Four
+                button.btn.btn-default(type="button" data-type="snip_five") Snippet Five
 
               .graph
 
   .loading Loading...
 
 block scripts
-  script(type="text/template" id='summaryList')
-    ul.list-group
-      li.list-group-item <span class="badge"><%- formatDistance(mToMi(distance_m)) %></span> Miles Driven
-      li.list-group-item <span class="badge"><%- formatDuration(duration_s) %></span> Duration
-      li.list-group-item <span class="badge"><%- trip_count %></span> Trip Count
-      li.list-group-item <span class="badge"><%- formatMPG(average_mpg) %></span> Average MPG
-      li.list-group-item <span class="badge"><%- formatFuelVolume(fuel_volume_usgal) %></span> Gallons of Fuel
-      li.list-group-item <span class="badge">$<%- formatFuelCost(fuel_cost_usd) %></span> Fuel Cost
+script(type='text/template' id='snip_one')
+.well
+  p
+    code snippet ONE goes here
+
+script(type='text/template' id='snip_two')
+.well
+  p
+    code snippet Two goes here
+
+script(type='text/template' id='snip_three')
+.well
+  p
+    code snippet Three goes here
+
+script(type='text/template' id='snip_four')
+.well
+  p
+    code snippet FOUR goes here
+
+script(type='text/template' id='snip_five')
+.well
+  p
+    code snippet FIVE goes here
+
 
   script(src="/javascripts/summary.js")
