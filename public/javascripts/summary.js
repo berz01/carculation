@@ -121,7 +121,7 @@ console.log(viewType);
     .addClass(viewType);
 
   if (viewType === 'snippetOne') {
-    $('#snip').append(snippetOneTemplate());
+    $('#snip').append("<div class='well'><code>snipper goes here</code></div>");
   } else if (viewType === 'snippetTwo') {
     $('#snip').append(snippetTwoTemplate());
 }else if (viewType === 'snippetThree') {
