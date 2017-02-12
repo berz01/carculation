@@ -32,6 +32,7 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
+    <link href="/build/css/divswap.css" rel="stylesheet">
 </head>
 
 <body>
@@ -52,16 +53,61 @@
         <!-- TABLES BEGIN -->
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="row" role="main">
+          <div class="col-md-8 col-md-offset-2">
             <h1>Home</h1>
             <br />
             <p>some shit will go here tomorrow</p>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="links row">
+                  <div class="col-md-12>"
+                    <a class="btn btn-info"href="#snipOne">GET</a>
+                  </div>
+                  <div class="col-md-12>"
+                    <a class="btn btn-info"href="#snipTwo">POST</a>
+                  </div>
+                  <div class="col-md-12>"
+                    <a class="btn btn-info"href="#snipThree">somthing</a>
+                  </div>
+                  <div class="col-md-12>"
+                    <a class="btn btn-info"href="#snipFour">what</a>
+                  </div>
+                  <div class="col-md-12>"
+                    <a class="btn btn-info"href="#snipFive">huh</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div id="snipOne" class="panels">
+                    Login Stuff
+                </div>
+                <div id="snipTwo" class="panels">
+                    Registration Stuff
+                </div>
+                <div id="snipThree" class="panels">
+                    slkdfja;ksdjf
+                </div>
+                <div id="snipFour" class="panels">
+                    okokokok
+                </div>
+                <div id="snipFive" class="panels">
+                    as;lkdfja;lskdjf;laksjdf
+                </div>
+              </div>
+          </div>
         </div>
         <!-- Tables-->
     </div>
 
 
 </body>
+<script>
+$(".links a").click(function() {
+  $(".panels").hide();
+  $(this.hash).fadeIn();
+});
+</script>
 <script src="/bower_components/polyline/src/polyline.js"></script>
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="/bower_components/underscore/underscore-min.js"></script>
