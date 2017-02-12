@@ -106,9 +106,37 @@
               </div>
               <div class="col-md-9 well mywell">
                 <div id="snipOne" class="panels">
-                  <pre><code>api.get('/payments', function(req, res) {
-                      res.send("JSON GOES HERE");
-                  });</code></pre>
+                  <pre><code>
+                    api.post('/chargeVault/:amount', function(req, res) {
+                        var myJSONObject = {
+                            amount: req.params.amount,
+                            paymentVaultToken: {
+                                customerId: '5000006',
+                                paymentMethodId: '1',
+                                paymentType: 'CREDIT_CARD'
+                            },
+                            developerApplication: {
+                                developerId: 12345678,
+                                version: '1.2'
+                            }
+                        };
+
+                        request({
+                            url: "https://gwapi.demo.securenet.com/api/Payments/Charge",
+                            method: "POST",
+                            headers: {
+                                Authorization: auth,
+                                SecurenetID: '8008942'
+                            },
+                            json: true,
+                            body: myJSONObject
+                        }, function(error, response, body) {
+                            //console.log(response.body);
+                            res.send(response.body);
+                        });
+
+                    });
+                  </code></pre>
                 </div>
                 <div id="snipTwo" class="panels">
                     Registration Stuff
