@@ -120,7 +120,7 @@ exports.revenue = (req, res, next) => {
         var hundo = [15, 25, 35, 4, 21];
         for (var i = 0; i < 5; i++) {
 
-            vehicleIds.push({
+            vehicles.push({
                 name: vehicleNames[i].name,
                 percent: hundo[i]
               });
