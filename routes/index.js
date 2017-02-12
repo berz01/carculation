@@ -119,9 +119,7 @@ exports.script = function(req, res, next) {
             var localTotal = ((trips[i].distance_m / 1609.34) * 0.75).toFixed(2);
             total += localTotal;
             console.log(localTotal);
-        }
-
-        res.render('login.pug');
+        } 
     });
 };
 
