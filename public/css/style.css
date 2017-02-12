@@ -3,6 +3,10 @@ body {
   background: #F7F7F7 !important;
   color:#73879C;
 }
+
+.mywell{
+  background: #e6e6e6 !important;
+}
 .hidden-btn{
   display:none;
 }
