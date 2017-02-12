@@ -32,6 +32,18 @@ exports.login = (req, res, next) => {
 };
 
 exports.audit = (req, res, next) => {
+
+  var myJSONObject = {
+
+      customerId: '5000006',
+      startDate: '01/01/2017',
+      endDate: '2/11/2017',
+      developerApplication: {
+          developerId: 12345678,
+          version: '1.2'
+      }
+  };
+
   request({
       url: "https://gwapi.demo.securenet.com/api/transactions/Search",
       method: "POST",
