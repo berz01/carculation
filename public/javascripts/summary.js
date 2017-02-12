@@ -121,15 +121,15 @@ function renderSnippet() {
     .addClass(viewType);
 
   if (viewType === 'snippetOne') {
-    $('#snip').append(snippetOneTemplate();
+    $('#snip').append(snippetOneTemplate());
   } else if (viewType === 'snippetTwo') {
-    $('#snip').append(snippetTwoTemplate();
+    $('#snip').append(snippetTwoTemplate());
 }else if (viewType === 'snippetThree') {
-  $('#snip').append(snippetThreeTemplate();
+  $('#snip').append(snippetThreeTemplate());
 }else if (viewType === 'snippetFour') {
-  $('#snip').append(snippetFourTemplate();
+  $('#snip').append(snippetFourTemplate());
 }else if (viewType === 'snippetFive') {
-  $('#snip').append(snippetFiveTemplate();
+  $('#snip').append(snippetFiveTemplate());
 }
 
 
