@@ -98,7 +98,7 @@ exports.revenue = (req, res, next) => {
     }, function(error, response, body) {
         //console.log(response.body);
         var names = [];
-        for (var i = 0; i < transactions.length; i++) {
+        for (var i = 0; i < response.body.transactions.length; i++) {
             names.push({
                 firstName: chance.first(),
                 lastName: chance.last()
