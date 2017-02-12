@@ -6,6 +6,15 @@ body {
 .hackTitle{
   font-size:50px;
 }
+.sidebarImage{
+  float: none;
+  margin-top:150px;
+  margin: 0 auto;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+
+}
 .mywell{
   background: #fff !important;
 }
