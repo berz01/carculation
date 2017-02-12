@@ -103,10 +103,12 @@
 
 </body>
 <script>
+ $( function() {
 $(".links a").click(function() {
   $(".panels").hide();
   $(this.hash).fadeIn();
 });
+} );
 </script>
 <script src="/bower_components/polyline/src/polyline.js"></script>
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
@@ -119,6 +121,7 @@ $(".links a").click(function() {
 <script src="/javascripts/data.js"></script>
 <script src="/javascripts/main.js"></script>
 <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="/vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
