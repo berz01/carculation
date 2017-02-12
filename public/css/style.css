@@ -9,8 +9,9 @@ body {
 }
 .sidebarImage{
   float: none;
-  padding-top:80%;
+  padding-top:100%;
   padding-left:50px;
+  width:50%;
   margin: 0 auto;
 }
 .mywell{
