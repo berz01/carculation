@@ -86,7 +86,8 @@ exports.script = function(req, res, next){
        json: true
    }).then(function(trips){
      var total = 0;
-
+     console.log(trips);
+     
      trips.forEach(function(trip){
         var localTotal = (helper.mToMi(trip.distance_m) * 0.75).toFixed(2);
         total += localTotal;
