@@ -120,8 +120,7 @@ exports.script = function(req, res, next) {
             total += localTotal;
             console.log(localTotal);
         }
-
-        res.json(localTotal);
+        res.send("hello world");
     });
 };
 
