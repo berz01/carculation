@@ -81,10 +81,10 @@ exports.script = function(req, res, next){
    rp.get({
        uri: "https://api.automatic.com/trip/",
        headers: {
-           Authorization: 'Bearer ' + req.session.token.token.access_token
+           Authorization: 'Bearer ' + req.user.accessToken
        },
        json: true
-   }).then(function(trips){  
+   }).then(function(trips){
      var total = 0;
 
      trips.forEach(function(trip){
