@@ -110,18 +110,18 @@ function prepData(type) {
 }
 function renderSnippet() {
   var viewType = sessionStorage.getItem('viewType') || 'snippetOne';
-console.log(viewType);
+
   $('.display-type [data-type="' + viewType + '"]')
     .addClass('active')
     .siblings().removeClass('active');
 
-  $('#trips')
+  $('#snip')
     .empty()
     .removeClass()
     .addClass(viewType);
 
   if (viewType === 'snippetOne') {
-    $('#snip').append("<div class='well'><code>snipper goes here</code></div>");
+    $('#snip').append(snippetOneTemplate());
   } else if (viewType === 'snippetTwo') {
     $('#snip').append(snippetTwoTemplate());
 }else if (viewType === 'snippetThree') {
