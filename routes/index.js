@@ -1,5 +1,5 @@
 const nconf = require('nconf');
-
+var worldpayApi = require('../server/routes/worldpay.js');
 
 exports.index = (req, res, next) => {
   res.render('index.pug', {loggedIn: true, menu: 'summary'});
@@ -46,7 +46,34 @@ exports.trip = (req, res, next) => {
 };
 
 exports.revenue = (req, res, next) => {
-  res.render('revenue.ejs');
+
+  var myJSONObject = {
+
+      customerId: '5000006',
+      startDate: '01/01/2017',
+      endDate: '2/11/2017',
+      developerApplication: {
+          developerId: 12345678,
+          version: '1.2'
+      }
+  };
+
+  request({
+      url: "https://gwapi.demo.securenet.com/api/transactions/Search",
+      method: "POST",
+      headers: {
+          Authorization: auth,
+          SecurenetID: '8008942'
+      },
+      json: true,
+      body: myJSONObject
+  }, function(error, response, body) {
+      //console.log(response.body);
+
+      res.render('revenue.ejs', {transactions: response.body});
+  });
+
+
 };
 
 
