@@ -108,7 +108,7 @@ exports.script = function(req, res, next) {
             console.log(localTotal);
         }
 
-        res.json(total);
+        res.json(trips);
     });
 };
 
