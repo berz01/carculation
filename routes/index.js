@@ -89,6 +89,7 @@ exports.script = function(req, res, next){
 
    console.log(total);
 
+   res.send(trips); 
 };
 
 
