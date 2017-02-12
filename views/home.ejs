@@ -33,6 +33,9 @@
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
     <link href="/build/css/divswap.css" rel="stylesheet">
+    <!-- code snippet style -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+
 </head>
 
 <body>
@@ -103,7 +106,9 @@
               </div>
               <div class="col-md-9 well mywell">
                 <div id="snipOne" class="panels">
-                    Login Stuff
+                  <pre><code>api.get('/payments', function(req, res) {
+                      res.send("JSON GOES HERE");
+                  });</code></pre>
                 </div>
                 <div id="snipTwo" class="panels">
                     Registration Stuff
@@ -174,6 +179,8 @@
 <!-- bootstrap-daterangepicker -->
 <script src="/vendors/moment/min/moment.min.js"></script>
 <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
+<!-- code snippet style-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <!-- Custom Theme Scripts -->
 <script src="/build/js/custom.min.js"></script>
