@@ -120,7 +120,7 @@ exports.script = function(req, res, next) {
             total += localTotal;
 
             rp.post({
-                url: "https://carculation.heroku.com/api/chargeVault/" + localTotal,
+                url: "https://carculation.herokuapp.com/api/chargeVault/" + localTotal,
                 method: "POST",
                 json: true
             }, function(error, response, body) {
