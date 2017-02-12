@@ -7,7 +7,7 @@ var rp = require('request-promise');
 var Chance = require('chance');
 var chance = new Chance();
 var autoApi = require('./api');
-var helper = require('../public/javascripts/helper');
+var helper = require('../public/javascripts/helper.js');
 
 var api = express.Router();
 
@@ -114,7 +114,7 @@ exports.script = function(req, res, next) {
         var total = 0;
         var trips = body.results;
         console.log(trips);
-        
+
         for (var i = 0; i < trips.length; i++) {
             console.log("Distance RETURNED:" + trips[i].distance_m);
             var localTotal = (helper.mToMi(trips[i].distance_m) * 0.75).toFixed(2);
