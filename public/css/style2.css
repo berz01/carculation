@@ -6,6 +6,10 @@
  * http://opensource.org/licenses/MIT
  */
 .wrapper2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -190px 0 0 -468px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: #9f9f9f;
@@ -13,7 +17,7 @@
 }
 .package {
   box-sizing: border-box;
-  width: 100%;
+  width: 301px;
   height: 200px;
   border: 3px solid #e8e8e8;
   border-radius: 7px;
@@ -37,17 +41,17 @@
   font-size: 3rem;
   margin-top: -5px;
 }
-.price {
+.price-title {
   margin-top: 7px;
   font-weight: bold;
 }
-.price::after {
+.price-title::after {
   content: " / per transaction";
   font-weight: normal;
 }
 
-.price2::after {
-  content: " / per month";
+.price-title2::after {
+  content: " / per user per month";
   font-weight: normal;
 }
 .trial {
