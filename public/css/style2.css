@@ -5,7 +5,7 @@
  * Distributed under the terms of the MIT license
  * http://opensource.org/licenses/MIT
  */
-.wrapper {
+.wrapper2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -53,13 +53,7 @@
 .price2::after {
   content: " / per month";
   font-weight: normal;
-}
-
-hr {
-  background-color: #dedede;
-  border: none;
-  height: 1px;
-}
+} 
 .trial {
   font-size: .9rem;
   font-weight: 600;
@@ -72,25 +66,9 @@ hr {
   position: relative;
   bottom: -20px;
 }
-ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-  margin-top: 29px;
-}
-li {
-  margin-bottom: 15px;
-}
 .checkIcon {
   font-family: "FontAwesome";
   content: "\f00c";
-}
-li::before {
-  font-family: "FontAwesome";
-  content: "\f00c";
-  font-size: 1.3rem;
-  color: #33c4b6;
-  margin-right: 3px;
 }
 .brilliant {
   border-color: #33c4b6;
