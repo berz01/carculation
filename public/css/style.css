@@ -14,8 +14,11 @@ width:50px;
 }
 .mywell{
   background: #fff !important;
+
+}
+.mywellscrollable{
   overflow:scroll;
-  height:400px;"
+  height:400px;
 }
 .hidden-btn{
   display:none;
