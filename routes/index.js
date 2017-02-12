@@ -4,6 +4,7 @@ var request = require('request');
 var worldpayApi = require('../server/routes/worldpay.js');
 var bodyParser = require('body-parser');
 var rp = require('request-promise');
+var Chance = require('chance');
 
 var api = express.Router();
 
@@ -83,8 +84,12 @@ exports.revenue = (req, res, next) => {
       body: myJSONObject
   }, function(error, response, body) {
       //console.log(response.body);
+      var names = [];
+      for(int i=0; i < transactions.length; i++){
+        names.push({firstName:Chance.first(), lastName:Chance.last()});
+      }
       console.log(response.body.transactions[0].transactionId);
-      res.render('revenue.ejs', {transactions : response.body.transactions});
+      res.render('revenue.ejs', {transactions : response.body.transactions, names: names});
   });
 
 
