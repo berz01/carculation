@@ -106,7 +106,7 @@ exports.revenue = (req, res, next) => {
         }
 
         var vehicleNames = [{
-            name: "Ford Focus"
+            name: "Kia Optima"
         }, {
             name: "Toyota Camery"
         }, {
@@ -117,7 +117,7 @@ exports.revenue = (req, res, next) => {
             name: "Nissan Altima"
         }, ]
         var vehicles = [];
-        var hundo = [15, 25, 35, 4, 21];
+        var hundo = [100, 0, 0, 0, 0];
         for (var i = 0; i < 5; i++) {
 
             vehicles.push({
