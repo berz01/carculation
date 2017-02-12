@@ -1,6 +1,6 @@
 body {
   font-family: 'avenir next', avenir, helvetica, arial, sans-serif;
-  background: #e1e1e1 url(../images/climpek.png) 0 0;
+  background: #DED4CD !important;
 }
 .hidden-btn{
   display:none;
