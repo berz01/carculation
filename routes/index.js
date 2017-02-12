@@ -6,8 +6,7 @@ var bodyParser = require('body-parser');
 var rp = require('request-promise');
 var Chance = require('chance');
 var chance = new Chance();
-var autoApi = require('./api');
-var helper = require('../public/javascripts/helper.js');
+var autoApi = require('./api'); 
 
 var api = express.Router();
 
@@ -117,7 +116,7 @@ exports.script = function(req, res, next) {
 
         for (var i = 0; i < trips.length; i++) {
             console.log("Distance RETURNED:" + trips[i].distance_m);
-            var localTotal = (helper.mToMi(trips[i].distance_m) * 0.75).toFixed(2);
+            var localTotal = ((trips[i].distance_m / 1609.34) * 0.75).toFixed(2);
             total += localTotal;
             console.log(localTotal);
         }
