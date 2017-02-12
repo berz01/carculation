@@ -31,6 +31,9 @@ exports.login = (req, res, next) => {
     res.render('login.pug');
 };
 
+exports.audit = (req, res, next) => {
+    res.render('audit.ejs');
+};
 
 exports.redirect = (req, res, next) => {
     res.redirect('/trips');
