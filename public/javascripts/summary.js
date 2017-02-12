@@ -110,7 +110,7 @@ function prepData(type) {
 }
 function renderSnippet() {
   var viewType = sessionStorage.getItem('viewType') || 'snippetOne';
-
+console.log(viewType);
   $('.display-type [data-type="' + viewType + '"]')
     .addClass('active')
     .siblings().removeClass('active');
