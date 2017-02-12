@@ -13,6 +13,7 @@ var snippetFiveTemplate = _.template($('#snippetFive').html());
 
 $('.display-type a').click(function() {
   sessionStorage.setItem('viewType', $(this).data('type'));
+  renderSnippet();
   return false;
 });
 
@@ -107,7 +108,32 @@ function prepData(type) {
 
   return graphData;
 }
+function renderSnippet() {
+  var viewType = sessionStorage.getItem('viewType') || 'snippetOne';
 
+  $('.display-type [data-type="' + viewType + '"]')
+    .addClass('active')
+    .siblings().removeClass('active');
+
+  $('#trips')
+    .empty()
+    .removeClass()
+    .addClass(viewType);
+
+  if (viewType === 'snippetOne') {
+    $('#snip').append(snippetOneTemplate();
+  } else if (viewType === 'snippetTwo') {
+    $('#snip').append(snippetTwoTemplate();
+}else if (viewType === 'snippetThree') {
+  $('#snip').append(snippetThreeTemplate();
+}else if (viewType === 'snippetFour') {
+  $('#snip').append(snippetFourTemplate();
+}else if (viewType === 'snippetFive') {
+  $('#snip').append(snippetFiveTemplate();
+}
+
+
+}
 
 function drawGraph(graphData) {
   $('#graphs .graph').empty();
