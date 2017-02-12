@@ -41,9 +41,9 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#">| Carculation</a></li>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/trips">Trips</a></li>
-                <li><a href="/revenue">Revenue</a></li>
+                <li><a href="/home"><i aria-hidden="true" class="fa fa-car"></i> Home</a></li>
+                <li><a href="/trips"><i aria-hidden="true" class="fa fa-home"></i> Trips</a></li>
+                <li><a href="/revenue"><i aria-hidden="true" class="fa fa-money"></i> Revenue</a></li>
             </ul>
         </div>
         <!-- Side bar -->
@@ -195,60 +195,63 @@
                     <!-- PIE CHART -->
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="x_panel">
-                          <div class="x_title">
-                            <h2># of Transactions per Vehicle</h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                              </li>
-                              <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                  <li><a href="#">Settings 1</a>
-                                  </li>
-                                  <li><a href="#">Settings 2</a>
-                                  </li>
+                            <div class="x_title">
+                                <h2># of Transactions per Vehicle</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Settings 1</a>
+                                            </li>
+                                            <li><a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
                                 </ul>
-                              </li>
-                              <li><a class="close-link"><i class="fa fa-close"></i></a>
-                              </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                          </div>
-                          <div class="x_content">
-                            <table class="" style="width:100%">
-                              <tr>
-                                <th style="width:37%;">
-                                  <p>Top 5</p>
-                                </th>
-                                <th>
-                                  <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                                    <p class="">Make and Model</p>
-                                  </div>
-                                  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                    <p class="">Percentage</p>
-                                  </div>
-                                </th>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <canvas class="canvasDoughnut" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
-                                </td>
-                                <td>
-                                  <table class="tile_info">
-                                    <% var colors = ["blue", "green", "purple", "aero", "red"]; %>
-                                    <% for(var i=0; i < 5; i++) { %>
-                                     <tr>
-                                      <td>
-                                        <p><i class="fa fa-square <%= colors[i] %>"></i> <%= vehicles[i].name %> </p>
-                                      </td>
-                                      <td><%= vehicles[i].percent %>%</td>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table class="" style="width:100%">
+                                    <tr>
+                                        <th style="width:37%;">
+                                            <p>Top 5</p>
+                                        </th>
+                                        <th>
+                                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                                <p class="">Make and Model</p>
+                                            </div>
+                                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                                <p class="">Percentage</p>
+                                            </div>
+                                        </th>
                                     </tr>
-                                    <% } %>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </div>
+                                    <tr>
+                                        <td>
+                                            <canvas class="canvasDoughnut" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
+                                        </td>
+                                        <td>
+                                            <table class="tile_info">
+                                                <% var colors = ["blue", "green", "purple", "aero", "red"]; %>
+                                                    <% for(var i=0; i < 5; i++) { %>
+                                                        <tr>
+                                                            <td>
+                                                                <p><i class="fa fa-square <%= colors[i] %>"></i>
+                                                                    <%= vehicles[i].name %>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <%= vehicles[i].percent %>%</td>
+                                                        </tr>
+                                                        <% } %>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
@@ -358,27 +361,35 @@
                                         </thead>
 
                                         <tbody>
-                                                <% var bs = transactions %>
+                                            <% var bs = transactions %>
                                                 <% for(var i=0; i < bs.length; i++) { %>
                                                     <% var tDate = new Date(transactions[i].transactionData.date) %>
-                                                    <% if(i % 2){ %>
-                                                        <tr class="even pointer">
-                                                        <% } else { %>
-                                                        <tr class="odd pointer">
-                                                        <% } %>
-                                                                        <td class="a-center ">
-                                                                            <input type="checkbox" class="flat" name="table_records">
-                                                                        </td>
-                                                                        <td class=" "><%= transactions[i].transactionId %></td>
-                                                                        <td class=" ">Barrett Davis</td>
-                                                                        <td class="a-right a-right "><%= transactions[i].transactionData.amount %></td>
-                                                                        <td class=" ">109238091273917823</td>
-                                                                        <td class=" "><%= tDate.toGMTString() %></td>
-                                                                        <td class=" "><%= transactions[i].paymentTypeResult %></td>
-                                                                        <td class=" last"><a href="#">View</a><a href="#">Audit(Pro)</a>
-                                                                        </td>
-                                                                </tr>
-                                                                <% } %>
+                                                        <% if(i % 2){ %>
+                                                            <tr class="even pointer">
+                                                                <% } else { %>
+                                                                    <tr class="odd pointer">
+                                                                        <% } %>
+                                                                            <td class="a-center ">
+                                                                                <input type="checkbox" class="flat" name="table_records">
+                                                                            </td>
+                                                                            <td class=" ">
+                                                                                <%= transactions[i].transactionId %>
+                                                                            </td>
+                                                                            <td class=" ">Barrett Davis</td>
+                                                                            <td class="a-right a-right ">
+                                                                                <%= transactions[i].transactionData.amount %>
+                                                                            </td>
+                                                                            <td class=" ">109238091273917823</td>
+                                                                            <td class=" ">
+                                                                                <%= tDate.toGMTString() %>
+                                                                            </td>
+                                                                            <td class=" ">
+                                                                                <%= transactions[i].paymentTypeResult %>
+                                                                            </td>
+                                                                            <td class=" last"><a href="#">View</a><a href="#">Audit(Pro)</a>
+                                                                            </td>
+                                                                    </tr>
+                                                                    <% } %>
                                         </tbody>
                                     </table>
                                 </div>
