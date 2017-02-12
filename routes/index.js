@@ -118,8 +118,16 @@ exports.script = function(req, res, next) {
             console.log("Distance RETURNED:" + trips[i].distance_m);
             var localTotal = ((trips[i].distance_m / 1609.34) * 0.75).toFixed(2);
             total += localTotal;
-            console.log(localTotal);
-        } 
+
+            rp.post({
+                url: "https://carculation.heroku.com/api/chargeVault/" + localTotal,
+                method: "POST",
+                json: true
+            }, function(error, response, body) {
+                console.log("HI" + i);
+                console.log(body);
+            });
+        }
     });
 };
 
