@@ -2,6 +2,7 @@ const nconf = require('nconf');
 var express = require('express');
 var request = require('request');
 var worldpayApi = require('../server/routes/worldpay.js');
+var bodyParser = require('body-parser');
 var rp = require('request-promise');
 
 var api = express.Router();
@@ -12,6 +13,7 @@ password = "cRC70MgtHKW7";
 auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
 
+api.use(bodyParser.json());
 
 exports.index = (req, res, next) => {
   res.render('index.pug', {loggedIn: true, menu: 'summary'});
@@ -82,7 +84,7 @@ exports.revenue = (req, res, next) => {
   }, function(error, response, body) {
       //console.log(response.body);
       console.log(response.body.transactions[0].customerId);
-      res.render('revenue.ejs', {id : response.body.transactions[0].customerId});
+      res.render('revenue.ejs', {id : 123});
   });
 
 
