@@ -1,5 +1,20 @@
+_.templateSettings = {
+  interpolate: /\{\{(.+?)\}\}/g
+};
+
 var trips;
 var weekly;
+var snippetOneTemplate = _.template($('#snippetOne').html());
+var snippetTwoTemplate = _.template($('#snippetTwo').html());
+var snippetThreeTemplate = _.template($('#snippetThree').html());
+var snippetFourTemplate = _.template($('#snippetFour').html());
+var snippetFiveTemplate = _.template($('#snippetFive').html());
+
+
+$('.display-type a').click(function() {
+  sessionStorage.setItem('viewType', $(this).data('type'));
+  return false;
+});
 
 fetchTrips(processTrips);
 
