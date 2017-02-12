@@ -8,8 +8,8 @@ body {
   text-align: center;
 }
 .sidebarImage{
-  bottom:0;
-  right:0;
+margin-top:100%;
+width:50px;
 }
 .mywell{
   background: #fff !important;
