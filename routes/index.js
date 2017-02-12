@@ -104,10 +104,32 @@ exports.revenue = (req, res, next) => {
                 lastName: chance.last()
             });
         }
+
+        var vehicleNames = [{
+            name: "Ford Focus"
+        }, {
+            name: "Toyota Camery"
+        }, {
+            name: "Chevrolet Camaro"
+        }, {
+            name: "Tame Impala"
+        }, {
+            name: "Nissan Altima"
+        }, ]
+        var vehicles = [];
+        var hundo = [15, 25, 35, 4, 21];
+        for (var i = 0; i < 5; i++) {
+
+            vehicleIds.push({
+                name: vehicleNames[i].name,
+                percent: hundo[i]
+              });
+        }
         console.log(response.body.transactions[0].transactionId);
         res.render('revenue.ejs', {
             transactions: response.body.transactions,
-            names: names
+            names: names,
+            vehicles: vehicles
         });
     });
 
