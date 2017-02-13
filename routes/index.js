@@ -112,10 +112,11 @@ exports.script = function(req, res, next) {
     }).then(function(body) {
         var total = 0;
         var trips = body.results;
-        console.log(trips);
+
 
         for (var i = 0; i < trips.length; i++) {
-            console.log("Distance RETURNED:" + trips[i].distance_m);
+            console.log("This is the amount of trips coming from automatic: " + trips.length)
+              console.log("Async THIS dude: " + i);
             var localTotal = ((trips[i].distance_m / 1609.34) * 0.75).toFixed(2);
             total += localTotal;
 
