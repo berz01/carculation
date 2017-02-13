@@ -124,8 +124,8 @@ exports.script = function(req, res, next) {
                 method: "POST",
                 json: true
             }, function(error, response, body) {
-                console.log("HI" + i);
-                console.log(body);
+                console.log("How many times did this f'n run bro: " + i);
+
             });
         }
     });
