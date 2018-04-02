@@ -15,16 +15,42 @@ username = "8008942";
 password = "cRC70MgtHKW7";
 auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
-
 api.use(bodyParser.json());
 
+
+exports.auth = function(req, res, next) {
+    // // {Math.round(distance * .75 * 100)/100}
+    // const code = req.query.code;
+    //
+    // function saveToken(error, result) {
+    //   if (error) {
+    //     console.log('Access token error', error.message);
+    //     res.send('Access token error: ' +  error.message);
+    //     return;
+    //   }
+    //
+    //   // Attach `token` to the user's session for later use
+    //   // This is where you could save the `token` to a database for later use
+    //   req.session.token = oauth2.accessToken.create(result);
+    //
+    //   res.redirect('/welcome');
+    // }
+    //
+    // oauth2.authCode.getToken({
+    //   code: code
+    // }, saveToken);
+    // 
+    return res.redirect('https://carculation.diameter.tech.s3-website-us-east-1.amazonaws.com?accessToken=' + req.session.token);
+};
+
+
+// OLD ROUTES SHOULD STILL WORK
 exports.index = (req, res, next) => {
     res.render('index.pug', {
         loggedIn: true,
         menu: 'summary'
     });
 };
-
 
 exports.login = (req, res, next) => {
     res.render('login.pug');
@@ -131,7 +157,6 @@ exports.script = function(req, res, next) {
         }
     });
 };
-
 
 exports.revenue = (req, res, next) => {
 

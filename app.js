@@ -82,7 +82,7 @@ app.get('/summary', routes.summary);
 
 app.get('/authorize/', passport.authenticate('automatic'));
 app.get('/logout/', routes.logout);
-app.get('/redirect/', passport.authenticate('automatic', {failureRedirect: '/'}), routes.redirect);
+app.get('/redirect/', passport.authenticate('automatic', {failureRedirect: '/'}), routes.auth);
 
 app.use('/modules', require('./server/routes/modules'));
 app.use('/fleet', require('./server/routes/admin'));
