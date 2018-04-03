@@ -40,7 +40,8 @@ exports.auth = function(req, res, next) {
     //   code: code
     // }, saveToken);
     //
-    return res.redirect('http://carculation.diameter.tech.s3-website-us-east-1.amazonaws.com#accessToken=' + req.session.token);
+    // return res.redirect('http://carculation.diameter.tech.s3-website-us-east-1.amazonaws.com#accessToken=' + req.session.token);
+    return res.redirect('/home');
 };
 
 
