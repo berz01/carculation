@@ -31,6 +31,7 @@ exports.auth = function(req, res, next) {
     // Attach `token` to the user's session for later use
     // This is where you could save the `token` to a database for later use
     req.session.token = oauth2.accessToken.create(result);
+    console.log("CAPTURED TOKEN", req.session.token);
 
     return res.redirect('http://carculation.diameter.tech.s3-website-us-east-1.amazonaws.com#accessToken=' + req.session.token);
   }
