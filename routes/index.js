@@ -19,14 +19,13 @@ api.use(bodyParser.json());
 
 
 exports.auth = function(req, res, next) {
-  // // {Math.round(distance * .75 * 100)/100}
   const code = req.query.code;
 
   function saveToken(error, result) {
     if (error) {
       console.log('Access token error', error.message);
       res.send('Access token error: ' + error.message);
-      return res.http();
+      return;
     }
 
     // Attach `token` to the user's session for later use
@@ -40,8 +39,7 @@ exports.auth = function(req, res, next) {
     code: code
   }, saveToken);
 
-  return res.redirect('http://carculation.diameter.tech.s3-website-us-east-1.amazonaws.com#accessToken=' + req.session.token);
-  // return res.redirect('/home');
+  return res.redirect('/home');
 };
 
 
