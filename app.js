@@ -84,30 +84,7 @@ function startStreaming(token) {
   }, false);
 }
 
-app.get('/auth/nest', passport.authenticate('nest', passportOptions));
-
-app.get('/auth/nest/callback', passport.authenticate('nest', passportOptions),
-  function(req, res) {
-    var token = req.user.accessToken;
-
-    if (token) {
-      console.log('Success! Token acquired: ' + token);
-      res.send('Success! You may now close this browser window.');
-      startStreaming(token);
-    } else {
-      console.log('An error occurred! No token acquired.');
-      res.send('An error occurred. Please try again.');
-    }
-});
-
-/**
- * When authentication fails, present the user with an error requesting they try the request again.
- */
-app.get('/auth/failure', function(req, res) {
-  res.send('Authentication failed. Please try again.');
-});
-
-// ~*~*~*~ END NEST CODE ~*~*~*~*~
+// ~*~*~*~ END OF SETUP NEST CODE ~*~*~*~*~
 
 
 passport.serializeUser((user, done) => {
@@ -167,6 +144,32 @@ app.delete('/api/trips/:id/tag/:tag', routes.ensureAuthenticated, api.untagTrip)
 
 app.get('/download/trips.csv', routes.ensureAuthenticated, api.downloadTripsCSV);
 app.get('/download/trips.json', routes.ensureAuthenticated, api.trips);
+
+/// ~**~*~*~ NEST ROUTES ~*~*~**~*~*
+app.get('/auth/nest', passport.authenticate('nest', passportOptions));
+
+app.get('/auth/nest/callback', passport.authenticate('nest', passportOptions),
+  function(req, res) {
+    var token = req.user.accessToken;
+
+    if (token) {
+      console.log('Success! Token acquired: ' + token);
+      res.send('Success! You may now close this browser window.');
+      startStreaming(token);
+    } else {
+      console.log('An error occurred! No token acquired.');
+      res.send('An error occurred. Please try again.');
+    }
+});
+
+/// ~**~*~*~ END OF --> NEST ROUTES ~*~*~**~*~*
+
+/**
+ * When authentication fails, present the user with an error requesting they try the request again.
+ */
+app.get('/auth/failure', function(req, res) {
+  res.send('Authentication failed. Please try again.');
+});
 
 // error handlers
 require('./libs/errors')(app);
