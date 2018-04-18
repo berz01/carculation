@@ -10,7 +10,6 @@ const AutomaticStrategy = require('passport-automatic').Strategy;
 const NestStrategy = require('passport-nest').Strategy;
 const engines = require('consolidate');
 const http = require('http');
-const path = require('path');
 var EventSource = require('eventsource');
 var openurl = require('openurl');
 
