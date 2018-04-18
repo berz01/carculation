@@ -7,25 +7,12 @@ const nconf = require('nconf');
 const session = require('express-session');
 const passport = require('passport');
 const AutomaticStrategy = require('passport-automatic').Strategy;
+const NestStrategy = require('passport-nest').Strategy;
 const engines = require('consolidate');
-
-/**
-NestStrategy
-var http = require('http');
-var path = require('path');
-
-var express = require('express');
-var bodyParser = require('body-parser');
-var passport = require('passport');
-var NestStrategy = require('passport-nest').Strategy;
-var session = require('express-session');
+const http = require('http');
+const path = require('path');
 var EventSource = require('eventsource');
 var openurl = require('openurl');
-
-
-*/
-
-
 
 // This API will emit events from this URL.
 
