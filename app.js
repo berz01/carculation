@@ -9,10 +9,31 @@ const passport = require('passport');
 const AutomaticStrategy = require('passport-automatic').Strategy;
 const engines = require('consolidate');
 
+/**
+NestStrategy
+var http = require('http');
+var path = require('path');
+
+var express = require('express');
+var bodyParser = require('body-parser');
+var passport = require('passport');
+var NestStrategy = require('passport-nest').Strategy;
+var session = require('express-session');
+var EventSource = require('eventsource');
+var openurl = require('openurl');
+
+
+*/
+
+
+
+// This API will emit events from this URL.
+
 nconf.env().argv();
 nconf.file('./config.json');
 
 nconf.set('API_URL', 'https://api.automatic.com');
+var NEST_API_URL = 'https://developer-api.nest.com';
 
 const routes = require('./routes');
 const api = require('./routes/api');
@@ -28,7 +49,7 @@ app.engine('ejs', engines.ejs);
 
 
 // Use the AutomaticStrategy within Passport
-passport.use(new AutomaticStrategy({
+passport.use('automatic', new AutomaticStrategy({
   clientID: nconf.get('AUTOMATIC_CLIENT_ID'),
   clientSecret: nconf.get('AUTOMATIC_CLIENT_SECRET'),
   scope: ['scope:trip', 'scope:location', 'scope:vehicle:profile', 'scope:vehicle:events', 'scope:behavior']
@@ -38,6 +59,69 @@ passport.use(new AutomaticStrategy({
     return done(null, profile);
   }
 ));
+
+// ~*~*~*~ BEGIN NEST CODE ~*~*~*~*~
+
+var passportOptions = {
+  failureRedirect: '/auth/failure', // Redirect to another page on failure.
+};
+
+passport.use('nest', new NestStrategy({
+  // clientID: process.env.NEST_ID,
+  // clientSecret: process.env.NEST_SECRET
+  clientID: '4320769d-d858-455f-9ecb-e8ca1cc5965c',
+  clientSecret: 'RXxngYFrELgj51xx1qHxsAwoK'
+}));
+
+function startStreaming(token) {
+  var source = new EventSource(NEST_API_URL + '?auth=' + token);
+
+  source.addEventListener('put', function(e) {
+    console.log('\n' + e.data);
+  });
+
+  source.addEventListener('open', function(e) {
+    console.log('Connection opened!');
+  });
+
+  source.addEventListener('auth_revoked', function(e) {
+    console.log('Authentication token was revoked.');
+    // Re-authenticate your user here.
+  });
+
+  source.addEventListener('error', function(e) {
+    if (e.readyState == EventSource.CLOSED) {
+      console.error('Connection was closed! ', e);
+    } else {
+      console.error('An unknown error occurred: ', e);
+    }
+  }, false);
+}
+
+app.get('/auth/nest', passport.authenticate('nest', passportOptions));
+
+app.get('/auth/nest/callback', passport.authenticate('nest', passportOptions),
+  function(req, res) {
+    var token = req.user.accessToken;
+
+    if (token) {
+      console.log('Success! Token acquired: ' + token);
+      res.send('Success! You may now close this browser window.');
+      startStreaming(token);
+    } else {
+      console.log('An error occurred! No token acquired.');
+      res.send('An error occurred. Please try again.');
+    }
+});
+
+/**
+ * When authentication fails, present the user with an error requesting they try the request again.
+ */
+app.get('/auth/failure', function(req, res) {
+  res.send('Authentication failed. Please try again.');
+});
+
+// ~*~*~*~ END NEST CODE ~*~*~*~*~
 
 
 passport.serializeUser((user, done) => {
@@ -82,7 +166,8 @@ app.get('/summary', routes.summary);
 
 app.get('/authorize/', passport.authenticate('automatic'));
 app.get('/logout/', routes.logout);
-app.get('/redirect/', passport.authenticate('automatic', {failureRedirect: '/'}), routes.auth);
+app.get('/automatic/redirect', passport.authenticate('automatic', {failureRedirect: '/'}), routes.auth);
+app.get('/nest/redirect', passport.authenticate('nest', {failureRedirect: '/'}), routes.auth);
 
 app.use('/modules', require('./server/routes/modules'));
 app.use('/fleet', require('./server/routes/admin'));
