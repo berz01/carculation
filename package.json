@@ -44,7 +44,7 @@
     "nconf": "0.8.4",
     "passport": "0.3.2",
     "passport-automatic": "1.2.1",
-    "passort-nest": "1.0.0",
+    "passport-nest": "1.0.0",
     "pug": "2.0.0-beta4",
     "request": "2.74.0",
     "request-promise": "^4.1.1",
