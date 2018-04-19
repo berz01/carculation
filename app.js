@@ -167,7 +167,7 @@ app.get('/auth/nest/callback', passport.authenticate('nest', passportOptions),
       console.log('An error occurred! No token acquired.');
       res.send('An error occurred. Please try again.');
     }
-  }, api.auth);
+  }, routes.auth);
 
 /// ~**~*~*~ END OF --> NEST ROUTES ~*~*~**~*~*
 
