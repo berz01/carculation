@@ -162,6 +162,7 @@ app.get('/auth/nest/callback', passport.authenticate('nest', passportOptions),
 
     if (token) {
       console.log('Success! Token acquired: ' + token);
+      next();
       // startStreaming(token);
     } else {
       console.log('An error occurred! No token acquired.');
