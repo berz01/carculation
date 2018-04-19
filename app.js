@@ -36,10 +36,10 @@ app.engine('ejs', engines.ejs);
 
 // Use the AutomaticStrategy within Passport
 passport.use('automatic', new AutomaticStrategy({
-  clientID: nconf.get('AUTOMATIC_CLIENT_ID'),
-  clientSecret: nconf.get('AUTOMATIC_CLIENT_SECRET'),
-  scope: ['scope:trip', 'scope:location', 'scope:vehicle:profile', 'scope:vehicle:events', 'scope:behavior']
-},
+    clientID: nconf.get('AUTOMATIC_CLIENT_ID'),
+    clientSecret: nconf.get('AUTOMATIC_CLIENT_SECRET'),
+    scope: ['scope:trip', 'scope:location', 'scope:vehicle:profile', 'scope:vehicle:events', 'scope:behavior']
+  },
   (accessToken, refreshToken, profile, done) => {
     profile.accessToken = accessToken;
     return done(null, profile);
@@ -99,12 +99,16 @@ passport.deserializeUser((obj, done) => {
 app.use(favicon(`${__dirname}/public/favicon.ico`));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(session({
   secret: nconf.get('SESSION_SECRET'),
   resave: true,
   saveUninitialized: true,
-  cookie: {maxAge: 31536000000}
+  cookie: {
+    maxAge: 31536000000
+  }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -129,8 +133,12 @@ app.get('/summary', routes.summary);
 
 app.get('/authorize/', passport.authenticate('automatic'));
 app.get('/logout/', routes.logout);
-app.get('/automatic/redirect', passport.authenticate('automatic', {failureRedirect: '/'}), routes.auth);
-app.get('/nest/redirect', passport.authenticate('nest', {failureRedirect: '/'}), routes.auth);
+app.get('/automatic/redirect', passport.authenticate('automatic', {
+  failureRedirect: '/'
+}), routes.auth);
+app.get('/nest/redirect', passport.authenticate('nest', {
+  failureRedirect: '/'
+}), routes.auth);
 
 app.use('/modules', require('./server/routes/modules'));
 app.use('/fleet', require('./server/routes/admin'));
@@ -154,13 +162,12 @@ app.get('/auth/nest/callback', passport.authenticate('nest', passportOptions),
 
     if (token) {
       console.log('Success! Token acquired: ' + token);
-      res.send('Success! You may now close this browser window.');
       startStreaming(token);
     } else {
       console.log('An error occurred! No token acquired.');
       res.send('An error occurred. Please try again.');
     }
-});
+  }, api.auth);
 
 /// ~**~*~*~ END OF --> NEST ROUTES ~*~*~**~*~*
 
