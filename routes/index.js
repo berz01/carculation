@@ -40,8 +40,8 @@ exports.auth = function(req, res, next) {
   let address = "http://carculation.diameter.tech.s3-website-us-east-1.amazonaws.com";
   let token = null;
 
-  console.log("Testing:", req.get('host'));
-  if (req.get('host').includes("automatic")) {
+  console.log("Testing:", req.url);
+  if (req.url.includes("automatic")) {
     token = "#automaticToken=" + req.user.accessToken;
   } else {
     token = "#nestToken=" + req.user.accessToken;
