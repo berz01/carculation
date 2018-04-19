@@ -37,17 +37,16 @@ api.use(bodyParser.json());
 // }, saveToken);
 
 exports.auth = function(req, res, next) {
-  console.log("Testing:", req.session);
   let address = "http://carculation.diameter.tech.s3-website-us-east-1.amazonaws.com";
   let token = null;
 
+  console.log("Testing:", req.get('host'));
   if (req.get('host').includes("automatic")) {
     token = "#automaticToken=" + req.user.accessToken;
   } else {
     token = "#nestToken=" + req.user.accessToken;
   }
   return res.redirect(address + token);
-  // return res.redirect('/home');
 };
 
 
