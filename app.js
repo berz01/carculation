@@ -157,13 +157,12 @@ app.get('/download/trips.json', routes.ensureAuthenticated, api.trips);
 app.get('/auth/nest', passport.authenticate('nest', passportOptions));
 
 app.get('/auth/nest/callback', passport.authenticate('nest', passportOptions),
-  function(req, res) {
+  function(req, res, next) {
     var token = req.user.accessToken;
 
     if (token) {
       console.log('Success! Token acquired: ' + token);
       next();
-      // startStreaming(token);
     } else {
       console.log('An error occurred! No token acquired.');
       res.send('An error occurred. Please try again.');
